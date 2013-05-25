@@ -16,11 +16,14 @@ var UserView = Backbone.View.extend({
     this.listenTo(this.model, "change", this.render);
 
     //render after attaching listeners
-    this.render();
+    //this.render();
   },
 
   render: function(){
     //take the model's attributes, inject them into the templating system, and set it as $el's HTML
-    return this.$el.html(this.template(this.model.attributes));
+    this.$el.html(this.template(this.model.attributes));
+    console.log("Rendering: " ,this.el);
+
+    return this;
   }
 });

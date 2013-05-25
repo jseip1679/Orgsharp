@@ -1,8 +1,8 @@
 var User = Backbone.Model.extend({
-  defaults: {firstname:'John',
-    lastname: 'Doe',
-    email: 'john@org.com',
-    id: '1',
-    title: 'HR Manager'
+  defaults: {firstname:'Firstname',
+    lastname: 'Lastname',
+    email: 'firstname.lastname@company.com',
+    company: 'Company',
+    title:'HR Manager'
   }
 });

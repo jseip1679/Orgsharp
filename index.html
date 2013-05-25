@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <!--  Load Required Libraries  -->
+    <!--  Load Library Dependencies  -->
     <script src="./lib/jquery-1.10.0.min.js"></script>
     <script src="./lib/underscore-min.js"></script>
     <script src="./lib/backbone-min.js"></script>
+
+    <!--  Load Application Data-->
+    <script src="./data.js"></script>
 
     <!--  Load Source Files  -->
     <script src="./App.js"></script>
@@ -14,16 +17,12 @@
     <script src="./UserView.js"></script>
     <script src="./Router.js"></script>
 
-    <!--  Load Application Data-->
-    <script src="./data.js"></script>
-
   </head>
   <body>
     <script>
       //on document ready, start the router
       $(function(){
-        debugger;
-        Router.start();
+        var start = new Router();
       })
     </script>
   </body>
