@@ -1,4 +1,4 @@
-var UserView =  new Backbone.view.extend({
+var UserView = Backbone.view.extend({
   //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 

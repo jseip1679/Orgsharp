@@ -1,3 +1,3 @@
-var Users = new Backbone.collection.extend({
+var Users = Backbone.collection.extend({
   model: User
 });

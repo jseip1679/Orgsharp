@@ -1,14 +1,28 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script type="text/javascript" src="./lib/backbone-min.js"></script>
-    <script type="text/javascript" src="./lib/underscore-min.js"></script>
-    <script type="text/javascript" src="./lib/jquery-1.10.0.min.js"></script>
+    <!--  Load Required Libraries  -->
+    <script src="./lib/jquery-1.10.0.min.js"></script>
+    <script src="./lib/underscore-min.js"></script>
+    <script src="./lib/backbone-min.js"></script>
+
+    <!--  Load Source Files  -->
+    <script src="./App.js"></script>
+    <script src="./AppView.js"></script>
+    <script src="./User.js"></script>
+    <script src="./Users.js"></script>
+    <script src="./UserView.js"></script>
+    <script src="./Router.js"></script>
+
+    <!--  Load Application Data-->
+    <script src="./data.js"></script>
+
   </head>
   <body>
-    <script type="text/javascript">
+    <script>
       //on document ready, start the router
       $(function(){
+        debugger;
         Router.start();
       })
     </script>

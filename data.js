@@ -1,11 +1,11 @@
 //userData is an array of user objects
 var userData = [{
-  name:"Jake",
+  firstname:"Jake",
   age: "28",
   title: "Programmer"
 },
 {
-  name:"Bear",
+  firstname:"Bear",
   age: "4",
   title: "Dog"
 }];

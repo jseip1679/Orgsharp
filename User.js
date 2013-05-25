@@ -1,4 +1,4 @@
-var User = new Backbone.model.extend({
+var User = Backbone.model.extend({
   defaults: {firstname:'John',
     lastname: 'Doe',
     email: 'john@org.com',
