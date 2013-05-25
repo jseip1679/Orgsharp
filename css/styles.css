@@ -1,0 +1,21 @@
+.user-view{
+  position: relative;
+  left: 50px;
+  top: 50px;
+  width: 120px;
+  border-style: solid;
+  margin: 5px 5px 5px 5px;
+  border-radius: .5em;
+  border-color: #8aaacc;
+  border-width: 2px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+input {
+  width: 100px;
+}
+input[type="email"] {
+  font-size: 12px;
+
+}

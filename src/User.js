@@ -1,7 +1,7 @@
 var User = Backbone.Model.extend({
   defaults: {firstname:'Firstname',
     lastname: 'Lastname',
-    email: 'firstname.lastname@company.com',
+    email: 'first.last@co.com',
     company: 'Company',
     title:'Title'
   }
