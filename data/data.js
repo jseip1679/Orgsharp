@@ -2,13 +2,13 @@
 var userData = [
   {
     firstname:"Jake",
-    lastname: "1",
+    lastname: "Seip",
     age: "28",
     title: "Programmer"
   },
   {
     firstname:"Bear",
-    lastname: "2",
+    lastname: "Dog",
     age: "4",
     title: "Dog"
   }
