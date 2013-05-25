@@ -5,7 +5,11 @@ var UserView = Backbone.View.extend({
   className: "user-view",
 
   //using underscore's templating system.
-  template: _.template('<div><%= firstname %> -</div><div><%= lastname %></div>'),
+  template: _.template('<div>\
+                          <input type="text" value="<%= firstname %>"></input>\
+                          <input type="text" value="<%= lastname %>"></input>\
+                          <input type="email" value="<%= email %>"></input>\
+                        </div>'),
 
   events: {
 
@@ -15,14 +19,11 @@ var UserView = Backbone.View.extend({
     //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
 
-    //render after attaching listeners
-    //this.render();
   },
 
   render: function(){
     //take the model's attributes, inject them into the templating system, and set it as $el's HTML
     this.$el.html(this.template(this.model.attributes));
-    console.log("Rendering: " ,this.el);
 
     return this;
   }

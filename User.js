@@ -3,6 +3,6 @@ var User = Backbone.Model.extend({
     lastname: 'Lastname',
     email: 'firstname.lastname@company.com',
     company: 'Company',
-    title:'HR Manager'
+    title:'Title'
   }
 });

@@ -11,17 +11,15 @@ var AppView = Backbone.View.extend({
   initialize: function(params){
     //TODO attach data listeners
 
-    //render after attaching listeners
-    // this.render();
+
   },
 
   render: function(){
     //remove all children
-    //this.$el.children().detach();
+    this.$el.children().detach();
     //Given a collection of users, iterate through each, instantiate a view, and render it
     var users = this.model.get("users");
     this.$el.append(users.map(function(user){
-      console.log("Rendering individual user");
       return new UserView({model:user}).render().el;
     }));
     return this;
