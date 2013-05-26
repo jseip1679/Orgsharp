@@ -9,6 +9,8 @@ var Router = Backbone.Router.extend({
     this.users = new Users(userData); //collection of many 'user'
     this.app = new App({users: this.users}); //passed users as a parameter
     this.view = new  AppView({model: this.app}); //passed app as a parameter
+    this.orgView = new HierarchyView({model: this.app, hierarchy: hierarchyData}); //passed app and hierArchy Data
+
 
     //Append our newly created view to the DOM
     $('body').append(this.view.render().el);

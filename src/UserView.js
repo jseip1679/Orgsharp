@@ -37,5 +37,4 @@ var UserView = Backbone.View.extend({
     this.$el.css("border-color","#8aaacc");
   }
 
-
 });

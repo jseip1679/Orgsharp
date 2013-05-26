@@ -1,5 +1,3 @@
-var Hierarchy =  Backbone.model.extend({
-  initialize: function(params){
-
-  }
+var Hierarchy =  Backbone.Model.extend({
+  
 });
