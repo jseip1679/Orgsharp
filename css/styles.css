@@ -12,10 +12,15 @@
   padding: 10px 10px 10px 10px;
 }
 
+input{
+}
+
 input[type="text"]{
   width: 100px;
   border: none;
   box-shadow: none;
+  margin-bottom: 2px;
+
 }
 
 input[type="email"] {
@@ -23,4 +28,21 @@ input[type="email"] {
   font-size: 12px;
   border: none;
   box-shadow: none;
+  margin-bottom: 2px;
+
+}
+
+input[type="tel"] {
+  margin-bottom: 2px;
+  width: 100px;
+  font-size: 12px;
+  border: none;
+  box-shadow: none;
+}
+
+data {
+  display:none;
+}
+.user-view img {
+  display: none;
 }

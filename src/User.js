@@ -3,6 +3,8 @@ var User = Backbone.Model.extend({
     lastname: 'Lastname',
     email: 'first.last@co.com',
     company: 'Company',
-    title:'Title'
+    mobile: '+1 (650) 415 5101',
+    title:'Title',
+    imgUrl: "none"
   }
 });

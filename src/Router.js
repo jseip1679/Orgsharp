@@ -12,11 +12,11 @@ var Router = Backbone.Router.extend({
 
     //Append our newly created view to the DOM
     $('body').append(this.view.render().el);
-    console.log("Router.js", this.view.el);
-
   },
 
-  start: function(){},
+  start: function(){
+    Backbone.history.start();
+  },
 
   home: function(){},
 
