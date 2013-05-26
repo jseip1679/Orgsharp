@@ -6,9 +6,9 @@ var UserView = Backbone.View.extend({
 
   //using underscore's templating system.
   template: _.template('<div>\
-                          <img src=<%= imgUrl %>></img>\
-                          <input type="text" value="<%= firstname %> <%= lastname %>"></input>\
-                          <input type="tel" value="<%= mobile %>"></input>\
+                          <img src=<%= imgUrl %>></img><br>\
+                          <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
+                          <input type="tel" value="<%= mobile %>"></input><br>\
                           <input type="email" value="<%= email %>"></input>\
                         </div>'),
   events: {

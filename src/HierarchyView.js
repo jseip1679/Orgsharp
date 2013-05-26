@@ -1,7 +1,7 @@
 var HierarchyView = Backbone.View.extend({
 
   tagName: "div",
-  className: "HierarchyView",
+  className: "hierarchy-view",
 
   events: {
 
