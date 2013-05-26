@@ -29,7 +29,7 @@ var userData = [
 ];
 
 var hierarchyData = {
-  1:{"root":"true", children: [2,3,5]},
+  1:{id:1,"root":"true", children: [2,3,5]},
   2:{children:[6,7,4]},
   3:[],
   4:[],

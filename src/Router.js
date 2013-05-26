@@ -11,9 +11,10 @@ var Router = Backbone.Router.extend({
     this.view = new  AppView({model: this.app}); //passed app as a parameter
     this.orgView = new HierarchyView({model: this.app, hierarchy: hierarchyData}); //passed app and hierArchy Data
 
-
-    //Append our newly created view to the DOM
+    //Append our newly created views to the DOM
     $('body').append(this.view.render().el);
+    $('body').append(this.orgView.render().el);
+
   },
 
   start: function(){
