@@ -17,6 +17,7 @@ input{
 
 input[type="text"]{
   width: 100px;
+  display: inline;
   border: none;
   box-shadow: none;
   margin-bottom: 2px;
@@ -44,5 +45,7 @@ data {
   display:none;
 }
 .user-view img {
-  display: none;
+  float: left;
+  width: 80px;
+  height: 80px;
 }

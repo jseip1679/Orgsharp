@@ -7,8 +7,7 @@ var UserView = Backbone.View.extend({
   //using underscore's templating system.
   template: _.template('<div>\
                           <img src=<%= imgUrl %>></img>\
-                          <input type="text" value="<%= firstname %>"></input>\
-                          <input type="text" value="<%= lastname %>"></input>\
+                          <input type="text" value="<%= firstname %> <%= lastname %>"></input>\
                           <input type="tel" value="<%= mobile %>"></input>\
                           <input type="email" value="<%= email %>"></input>\
                         </div>'),
@@ -31,12 +30,10 @@ var UserView = Backbone.View.extend({
   },
 
   hover: function(){
-    console.log("hover event fired");
     this.$el.css("border-color","red");
   },
 
   unhover: function(){
-    console.log("unhover event fired");
     this.$el.css("border-color","#8aaacc");
   }
 
