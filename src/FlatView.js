@@ -5,7 +5,8 @@ var FlatView = Backbone.View.extend({
   className: "app-view",
 
   events: {
-
+    "mouseover": "hover",
+    "mouseleave": "unhover"
   },
 
   initialize: function(params){
@@ -23,5 +24,15 @@ var FlatView = Backbone.View.extend({
       return new UserView({model:user}).render().el;
     }));
     return this;
+  },
+
+  hover: function(){
+    this.$el.css("-webkit-transform",rotateAxis("Y",10));
+    this.$el.css("-webkit-transitionDuration","1s");
+  },
+
+  unhover: function(){
+    this.$el.css("-webkit-transform",rotateAxis("Y",0));
+    this.$el.css("-webkit-transitionDuration","1s");
   }
 });
