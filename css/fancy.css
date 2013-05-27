@@ -1,0 +1,122 @@
+body
+{
+  overflow: hidden;
+  background-color: gray;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: tahoma;
+}
+
+.view
+{
+  position: absolute;
+  display: block;
+    -webkit-transform-style: preserve-3d;
+}
+
+.viewflat
+{
+  position: absolute;
+  display: block;
+    -webkit-transform-style: preserve-3d;
+}
+
+.fader
+{
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 550ms;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+.page
+{
+    -webkit-perspective: 600;
+  width: 100%;
+    height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.origin
+{
+  left: 50%;
+  top: 50%;
+}
+
+div#camera
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 0.6, 0.6, 0.9);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+div#dolly
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 550ms;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+div.cell.reflection img
+{
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
+}
+
+div.cell
+{
+  -webkit-transition-property: -webkit-transform opacity;
+  -webkit-transition-duration: 550ms;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+div.cell img
+{
+  display: block;
+  position: absolute;
+
+  -webkit-transition-property: -webkit-transform /* PERF -webkit-box-shadow */ /* border-color */;
+  -webkit-transition-duration: 550ms;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+div.original img
+{
+  border: 1px solid transparent;
+}
+
+div.original.selected img
+{
+/* PERF
+  -webkit-box-shadow: 0px 0px 35px #000;
+*/
+  border-color: #000;
+}
+
+.mover
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 550ms;
+}
+
+div.original.selected .mover
+{
+  -webkit-transform: translate3d(0, 0, 40px);
+}
+
+div.original.selected.magnify .mover
+{
+  -webkit-transform: translate3d(0, 0, 100px);
+}
+
+div.original.selected.magnify img
+{
+  -webkit-transform: scale(2.0);
+}
+
+div.reflection.selected .mover
+{
+  -webkit-transform: translate3d(0, 0, 39px);
+}
