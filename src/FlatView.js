@@ -2,7 +2,7 @@ var FlatView = Backbone.View.extend({
   //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
-  className: "app-view",
+  className: "flat-view",
 
   events: {
     "mouseover": "hover",
@@ -28,7 +28,7 @@ var FlatView = Backbone.View.extend({
 
   hover: function(){
     this.$el.css("-webkit-transform-style","preserve-3d");
-    this.$el.css("-webkit-transform",rotateAxis("Y",30));
+    this.$el.css("-webkit-transform",rotateAxis("Y",10));
     this.$el.css("-webkit-transitionDuration","5s");
   },
 

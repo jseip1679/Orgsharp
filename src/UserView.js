@@ -30,7 +30,7 @@ var UserView = Backbone.View.extend({
 
   hover: function(){
     this.$el.css("border-color","red");
-    this.$el.css("-webkit-transform",translate3d(0,0,0));
+    this.$el.css("-webkit-transform",translate3d(0,0,25));
     this.$el.css("-webkit-transitionDuration","1s");
 
 
@@ -38,7 +38,7 @@ var UserView = Backbone.View.extend({
 
   unhover: function(){
     this.$el.css("border-color","#8aaacc");
-    this.$el.css("-webkit-transform",translate3d(0,0,50));
+    this.$el.css("-webkit-transform",translate3d(0,0,0));
     this.$el.css("-webkit-transitionDuration","1s");
   }
 
