@@ -23,7 +23,6 @@ var UserView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log("userView rendering");
     //take the model's attributes, inject them into the templating system, and set it as $el's HTML
     this.$el.html(this.template(this.model.attributes));
     return this;

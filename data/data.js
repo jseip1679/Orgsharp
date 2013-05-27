@@ -5,7 +5,7 @@ var userData = [
     firstname:"Jake",
     lastname: "Seip",
     age: "28",
-    mobile: "+1 (410) 819 - 6666",
+    mobile: "+1 (410) 819 6666",
     title: "Programmer",
     email: "jake.seip@gmail.com",
     imgUrl: "http://m3.licdn.com/mpr/pub/image-Z2Nf9njxRb9xp8FVXNle4CxBPRc048MHZ22iRrlxPERpuvUxZ2NiuR8xPvEEuRfduawI/jake-seip.jpg",
