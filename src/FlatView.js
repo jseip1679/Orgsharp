@@ -27,12 +27,14 @@ var FlatView = Backbone.View.extend({
   },
 
   hover: function(){
-    this.$el.css("-webkit-transform",rotateAxis("Y",10));
-    this.$el.css("-webkit-transitionDuration","1s");
+    this.$el.css("-webkit-transform-style","preserve-3d");
+    this.$el.css("-webkit-transform",rotateAxis("Y",30));
+    this.$el.css("-webkit-transitionDuration","5s");
   },
 
   unhover: function(){
+    this.$el.css("-webkit-transform-style","preserve-3d");
     this.$el.css("-webkit-transform",rotateAxis("Y",0));
-    this.$el.css("-webkit-transitionDuration","1s");
+    this.$el.css("-webkit-transitionDuration","5s");
   }
 });
