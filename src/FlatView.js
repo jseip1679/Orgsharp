@@ -1,4 +1,4 @@
-var AppView = Backbone.View.extend({
+var FlatView = Backbone.View.extend({
   //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 

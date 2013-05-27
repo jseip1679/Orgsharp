@@ -1,7 +1,6 @@
 .user-view{
   background-color: white;
   position: relative;
-  left: 20px;
   min-width: 120px;
   max-width: 50%;
   border-style: solid;
@@ -13,19 +12,15 @@
   padding: 10px 10px 10px 10px;
 }
 .app-view{
-  border-bottom-style: solid;
-  border-bottom-color: black;
   position:relative;
-  top: 50px;
 }
 
 .hierarchy-view{
   position:relative;
-  top: 50px;
 }
 
 input[type="text"]{
-  width: 100px;
+  width: 140px;
   display: inline;
   border: none;
   box-shadow: none;
@@ -34,7 +29,7 @@ input[type="text"]{
 }
 
 input[type="email"] {
-  width: 100px;
+  width: 140px;
   font-size: 12px;
   border: none;
   box-shadow: none;
@@ -44,7 +39,6 @@ input[type="email"] {
 
 span {
   position: relative;
-  top:50px;
 }
 
 input[type="tel"] {
