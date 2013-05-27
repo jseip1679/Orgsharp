@@ -23,14 +23,24 @@
     <script src="./src/Router.js"></script>
     <script src="./src/Hierarchy.js"></script>
     <script src="./src/HierarchyView.js"></script>
+</head>
 
-  </head>
   <body>
+    <!--Begin Camera and Dolly-->
+    <div class="origin view">
+      <div id="camera" class="view">
+        <div id="dolly" class="view">
+          <div id="stack" class="view"></div>
+          <div id="mirror" class="view"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="all-users">
       <span>Employee View</span>
     </div>
     <div class="org-chart">
-      <span>Org Chart View</span>
+      <span>Hierarchical View</span>
     </div>
     <script>
       //on document ready, start the router
