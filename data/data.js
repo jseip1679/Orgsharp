@@ -33,8 +33,8 @@ var userData = [
 ];
 
 var hierarchyData = {
-  0:{"root":"true", children: [1,2]},
-  1:{children:[3]},
+  0:{"root":"true", children: [1,3]},
+  1:{children:[2]},
   2:[],
   3:[]
 };
