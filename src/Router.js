@@ -12,8 +12,8 @@ var Router = Backbone.Router.extend({
     this.orgView = new HierarchyView({model: this.app, hierarchy: hierarchyData}); //passed app and hierarchy Data
 
     //Append our newly created views to the DOM
-    $('.all-users').append(this.flatView.render().el);
-    //$('.org-chart').append(this.orgView.render().el);
+    //$('.all-users').append(this.flatView.render().el);
+    $('.org-chart').append(this.orgView.render().el);
 
   },
 

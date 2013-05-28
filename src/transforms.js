@@ -3,6 +3,13 @@ var translate3d = function(x, y, z){
 };
 
 var rotateAxis = function(axis, degree){
-  console.log("rotate"+axis+"("+degree+"deg)");
   return "rotate"+axis+"("+degree+"deg)";
+};
+
+var offsetIndex = function(n){
+  if(n%2 === 0){
+    return -n || -1;
+  }else{
+    return n;
+  }
 };

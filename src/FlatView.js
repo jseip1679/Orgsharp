@@ -12,7 +12,6 @@ var FlatView = Backbone.View.extend({
   initialize: function(params){
     //TODO attach data listeners
 
-
   },
 
   render: function(){
@@ -31,9 +30,10 @@ var FlatView = Backbone.View.extend({
       x += X_INCR; //add  140px
       return new UserView({model:user, xyz:[x,y,z]}).render().el;
     }));
-    this.$el.append("<br>");
+
     x=0; //reset x
     y= Y_OFFSET; //set y offset
+
     this.$el.append(users.map(function(user){
       x+= X_INCR;
       return new UserReflectionView({model:user, xyz:[x,y,z]}).render().el;

@@ -36,7 +36,6 @@ var UserReflectionView = Backbone.View.extend({
     this.$el.css("border-color","red");
     this.$el.css("-webkit-transitionDuration","1s");
 
-
   },
 
   unhover: function(){
