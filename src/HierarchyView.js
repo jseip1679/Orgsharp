@@ -28,7 +28,6 @@ var HierarchyView = Backbone.View.extend({
       }
     });
 
-
     var X_INCR = 150;
     var Y_OFFSET = 180;
 
@@ -50,13 +49,14 @@ var HierarchyView = Backbone.View.extend({
       var childrenToTraverse =[];
 
       //place the root model
-      console.log("Placing User at Coordinates:", xyz);
       var nodeModel = model.get("users").get(nodeId);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
+      console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", depth);
       self.$el.append(nodeView);
-      depth++;
+      var yOffset = y + Y_OFFSET; //TODO fix this
 
-      if(!childIDs){ // append a reflection if we're at the end 
+
+      if(!childIDs){ // append a reflection if we're at the end
         var reflectionView = new UserReflectionView({model:nodeModel, xyz:[x,y+Y_OFFSET,z+10]}).render().$el;
         self.$el.append(reflectionView);
       } else {
@@ -64,7 +64,6 @@ var HierarchyView = Backbone.View.extend({
 
           //place the first child to the left, the second child to the right, the third to the left + x
           var xOffset = x + X_INCR*offsetIndex(i);
-          var yOffset = y +(Y_OFFSET*depth/2);
 
           //store each element that needs to be traversed in childrenToTraverseArrray;
           childrenToTraverse.push([childIDs[i],hierarchy,[xOffset,yOffset,0]]);

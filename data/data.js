@@ -26,8 +26,8 @@ var userData = [
   },
   {
     id: 3,
-    firstname:"Jane",
-    lastname: "Doe",
+    firstname:"Ali",
+    lastname: "W",
     imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
   },
   {
