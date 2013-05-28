@@ -39,23 +39,35 @@ var HierarchyView = Backbone.View.extend({
 
     var traverseTree = function(nodeId, hierarchy, xyz){
 
+      //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;
-      var childElements;
 
+      //storage for children to traverse
+      var childrenToTraverse =[];
+
+      //place the root model
+      console.log("Placing User at Coordinates:", xyz);
       var nodeModel = model.get("users").get(nodeId);
-      console.log("Coordinates:", xyz);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
       self.$el.append(nodeView);
 
+      //increment the tree's depth
+      depth++;
+
+      //if the model has children
       if(childIDs){
         for(var i = 0; i < childIDs.length; i++){
+
           //place the first child to the left, the second child to the right, the third to the left + x
           var xOffset = x + X_INCR*offsetIndex(i);
-          console.log(xOffset);
           var yOffset = y +(Y_OFFSET*depth);
-          depth++;
-          traverseTree(childIDs[i], hierarchy, [xOffset,yOffset,0]);
+
+          //store each element that needs to be traversed in childrenToTraverseArrray;
+          childrenToTraverse.push([childIDs[i],hierarchy,[xOffset,yOffset,0]]);
         }
+        _.each(childrenToTraverse, function(v){
+          traverseTree(v[0], v[1], v[2]);
+        });
       }
     };
 

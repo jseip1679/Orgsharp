@@ -29,7 +29,7 @@ var userData = [
     firstname:"Jane",
     lastname: "Doe",
     imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
-  } 
+  }
 ];
 
 var hierarchyData = {
