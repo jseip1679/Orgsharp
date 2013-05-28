@@ -22,10 +22,13 @@ var UserReflectionView = Backbone.View.extend({
   },
 
   render: function(){
+    var x = this.options.xyz[0];
+    var y = this.options.xyz[1];
+    var z = this.options.xyz[2];
+
     //take the model's attributes, inject them into the templating system, and set it as $el's HTML
     this.$el.html(this.template(this.model.attributes));
-    this.$el.css("-webkit-transform","scaleY(-1)");
-
+    this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(x,-y,z));
     return this;
   },
 

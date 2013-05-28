@@ -26,7 +26,7 @@ body
 .inverted-user {
   -webkit-transform-style: preserve-3d;
   background-color: white;
-  position: relative;
+  position: absolute;
   min-width: 110px;
   max-width: 50%;
   border-style: solid;

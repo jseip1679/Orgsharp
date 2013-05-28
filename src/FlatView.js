@@ -24,14 +24,19 @@ var FlatView = Backbone.View.extend({
     var y = 0;
     var z = 0;
 
+    var X_INCR = 150;
+    var Y_OFFSET = 180;
     //WIP
     this.$el.append(users.map(function(user){
-      x += 140; //add  140px
+      x += X_INCR; //add  140px
       return new UserView({model:user, xyz:[x,y,z]}).render().el;
     }));
     this.$el.append("<br>");
+    x=0; //reset x
+    y= Y_OFFSET; //set y offset
     this.$el.append(users.map(function(user){
-      return new UserReflectionView({model:user}).render().el;
+      x+= X_INCR;
+      return new UserReflectionView({model:user, xyz:[x,y,z]}).render().el;
     }));
     return this;
   },
