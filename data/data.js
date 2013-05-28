@@ -29,12 +29,26 @@ var userData = [
     firstname:"Jane",
     lastname: "Doe",
     imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+  },
+  {
+    id: 4,
+    firstname:"Jane",
+    lastname: "Doe",
+    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+  },
+  {
+    id: 5,
+    firstname:"Jane",
+    lastname: "Doe",
+    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
   }
 ];
 
 var hierarchyData = {
   0:{"root":true, children: [1,3]},
-  1:{children:[2]},
+  1:{children:[2,4,5]},
   2:[],
-  3:[]
+  3:[],
+  4:[],
+  5:[]
 };
