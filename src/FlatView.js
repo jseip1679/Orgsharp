@@ -23,6 +23,10 @@ var FlatView = Backbone.View.extend({
     this.$el.append(users.map(function(user){
       return new UserView({model:user}).render().el;
     }));
+    this.$el.append("<br>");
+    this.$el.append(users.map(function(user){
+      return new UserReflectionView({model:user}).render().el;
+    }));
     return this;
   },
 

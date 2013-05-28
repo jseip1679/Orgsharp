@@ -1,6 +1,5 @@
-.user-view{
+.user-view {
   -webkit-transform-style: preserve-3d;
-
   background-color: white;
   position: relative;
   min-width: 110px;
@@ -14,9 +13,34 @@
   padding: 10px 10px 10px 10px;
 }
 
+.inverted-user {
+  -webkit-transform-style: preserve-3d;
+  background-color: white;
+  position: relative;
+  min-width: 110px;
+  max-width: 50%;
+  border-style: solid;
+  margin: 5px 5px 5px 5px;
+  border-radius: .5em;
+  border-color: #8aaacc;
+  border-width: 2px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+body
+{
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(90deg, rgb(36,61,73) 0%, rgb(216,230,230) 56%);
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: tahoma;
+}
+
+
 .flat-view{
   -webkit-transform-style: preserve-3d;
-
   -webkit-perspective:800;
   position:relative;
 }
@@ -28,7 +52,15 @@
 }
 
 .user-view input[type="text"]{
-  
+  width: 100px;
+  display: inline;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 2px;
+
+}
+
+.inverted-user input[type="text"]{
   width: 100px;
   display: inline;
   border: none;
@@ -46,7 +78,16 @@
 
 }
 
-.user-view input[type="tel"] {
+.inverted-user input[type="email"] {
+  width: 100px;
+  font-size: 10px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 2px;
+
+}
+
+.user-view  input[type="tel"] {
   margin-bottom: 2px;
   width: 100px;
   font-size: 10px;
@@ -54,12 +95,36 @@
   box-shadow: none;
 }
 
+.inverted-user input[type="tel"] {
+  margin-bottom: 2px;
+  width: 100px;
+  font-size: 10px;
+  border: none;
+}
+
 data {
   display:none;
 }
+
 .user-view img {
   float: left;
   width: 80px;
   height: 80px;
   padding-bottom: 5px;
 }
+
+.inverted-user img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  padding-bottom: 5px;
+}
+
+
+.inverted-user
+{
+  overflow: hidden;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
+}
+
+
