@@ -1,7 +1,17 @@
+body
+{
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(90deg, rgb(36,61,73) 0%, rgb(216,230,230) 56%);
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: tahoma;
+}
+
 .user-view {
   -webkit-transform-style: preserve-3d;
   background-color: white;
-  position: relative;
+  position: absolute;
   min-width: 110px;
   max-width: 50%;
   border-style: solid;
@@ -28,21 +38,16 @@
   padding: 10px 10px 10px 10px;
 }
 
-body
-{
-  overflow: hidden;
-  background-image: -webkit-linear-gradient(90deg, rgb(36,61,73) 0%, rgb(216,230,230) 56%);
-  color: white;
-  margin: 0;
-  padding: 0;
-  font-family: tahoma;
-}
 
+.all-users {
+  height: 1000px;
+}
 
 .flat-view{
   -webkit-transform-style: preserve-3d;
   -webkit-perspective:800;
   position:relative;
+
 }
 
 .hierarchy-view{

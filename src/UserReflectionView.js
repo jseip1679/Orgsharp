@@ -19,7 +19,6 @@ var UserReflectionView = Backbone.View.extend({
   initialize: function(){
     //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
-
   },
 
   render: function(){
@@ -31,9 +30,15 @@ var UserReflectionView = Backbone.View.extend({
   },
 
   hover: function(){
+    this.$el.css("border-color","red");
+    this.$el.css("-webkit-transitionDuration","1s");
+
+
   },
 
   unhover: function(){
+    this.$el.css("border-color","#8aaacc");
+    this.$el.css("-webkit-transitionDuration","1s");
   }
 
 });

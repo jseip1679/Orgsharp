@@ -13,7 +13,7 @@ var Router = Backbone.Router.extend({
 
     //Append our newly created views to the DOM
     $('.all-users').append(this.flatView.render().el);
-    $('.org-chart').append(this.orgView.render().el);
+    //$('.org-chart').append(this.orgView.render().el);
 
   },
 
