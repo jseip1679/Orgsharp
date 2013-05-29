@@ -16,7 +16,7 @@ var HierarchyView = Backbone.View.extend({
   render: function(){
 
     var rootId,
-        hierarchy = this.options.hierarchy,
+        hierarchy = this.options.hierarchy.attributes,
         treeDepth = hierarchy.depth;
         model = this.model;
         self = this;
