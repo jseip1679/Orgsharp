@@ -43,7 +43,7 @@ var HierarchyView = Backbone.View.extend({
       var y = xyz[1];
       var z = xyz[2];
 
-      //ChildIDs is an array of all child ids for the current nodeID 
+      //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;
 
       //storage for children to traverse

@@ -9,7 +9,6 @@ var DollyView = Backbone.View.extend({
     "mouseleave" : "unhover"
   },
 
-
   initialize: function(){
     this.orgView = new HierarchyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);

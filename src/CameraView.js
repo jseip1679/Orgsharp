@@ -9,7 +9,6 @@ var CameraView = Backbone.View.extend({
     "mouseleave" : "unhover"
   },
 
-
   initialize: function(){
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);

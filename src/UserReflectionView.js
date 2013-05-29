@@ -12,7 +12,7 @@ var UserReflectionView = Backbone.View.extend({
                           <input type="email" value="<%= email %>"></input>\
                         </div>'),
   events: {
-    
+
   },
 
   initialize: function(){
@@ -30,5 +30,4 @@ var UserReflectionView = Backbone.View.extend({
     this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(x,-y,z));
     return this;
   }
-
 });
