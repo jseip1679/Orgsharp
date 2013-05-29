@@ -42,7 +42,6 @@ var UserView = Backbone.View.extend({
     this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+8));
     this.$el.css("-webkit-transitionDuration","1s");
 
-
   },
 
   unhover: function(){

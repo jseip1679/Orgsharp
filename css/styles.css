@@ -53,6 +53,12 @@ body
   position:relative;
 }
 
+.dolly-view{
+  -webkit-transform-style: preserve-3d;
+  -webkit-perspective:800;
+  position:relative;
+}
+
 .user-view input[type="text"]{
   width: 100px;
   display: inline;
