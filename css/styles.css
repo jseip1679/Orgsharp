@@ -1,5 +1,4 @@
-body
-{
+body {
   height: 1000px;
   overflow: hidden;
   background-color: black;
@@ -7,7 +6,12 @@ body
   color: white;
   margin: 0;
   padding: 0;
-  font-family: tahoma;
+}
+
+span {
+  font-family: 'Alef', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 .user-view {
