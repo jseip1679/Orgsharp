@@ -54,8 +54,8 @@ var HierarchyView = Backbone.View.extend({
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
 
       console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", depth);
-      
-      self.$el.append(nodeView);
+
+       self.$el.append(nodeView);
       var yOffset = y + Y_OFFSET;
       depth = Math.floor(y / Y_OFFSET);
 

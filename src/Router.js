@@ -12,12 +12,12 @@ var Router = Backbone.Router.extend({
     this.orgView = new HierarchyView({model: this.app, hierarchy: hierarchyData}); //passed app and hierarchy Data
 
     //WIP
-    this.dollyView = new DollyView({model: this.app, hierarchy: hierarchyData}); //passed app and hierarchy Data
+    this.cameraView = new CameraView({model: this.app, hierarchy: hierarchyData}); //passed app and hierarchy Data
 
     //Append our newly created views to the DOM
     //$('.all-users').append(this.flatView.render().el);
     //$('.org-chart').append(this.orgView.render().el);
-    $('.org-chart').append(this.dollyView.render().el);
+    $('.org-chart').append(this.cameraView.render().el);
 
 
   },
