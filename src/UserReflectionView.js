@@ -12,8 +12,7 @@ var UserReflectionView = Backbone.View.extend({
                           <input type="email" value="<%= email %>"></input>\
                         </div>'),
   events: {
-    "mouseover" : "hover",
-    "mouseleave" : "unhover"
+    
   },
 
   initialize: function(){
@@ -30,17 +29,6 @@ var UserReflectionView = Backbone.View.extend({
     this.$el.html(this.template(this.model.attributes));
     this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(x,-y,z));
     return this;
-  },
-
-  hover: function(){
-    this.$el.css("border-color","red");
-    this.$el.css("-webkit-transitionDuration","1s");
-
-  },
-
-  unhover: function(){
-    this.$el.css("border-color","#8aaacc");
-    this.$el.css("-webkit-transitionDuration","1s");
   }
 
 });

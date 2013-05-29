@@ -17,6 +17,7 @@ var HierarchyView = Backbone.View.extend({
 
     var rootId,
         hierarchy = this.options.hierarchy,
+        treeDepth = hierarchy.depth;
         model = this.model;
         self = this;
 
@@ -30,6 +31,8 @@ var HierarchyView = Backbone.View.extend({
 
     var X_INCR = 150;
     var Y_OFFSET = 180;
+
+    console.log(treeDepth);
 
     var x = $(window).width()/2 - X_INCR/2;
     var y = 0;
@@ -53,12 +56,16 @@ var HierarchyView = Backbone.View.extend({
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
       console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", depth);
       self.$el.append(nodeView);
-      var yOffset = y + Y_OFFSET; //TODO fix this
+      var yOffset = y + Y_OFFSET;
+      depth = Math.floor(y / Y_OFFSET);
 
+      console.log(depth);
 
       if(!childIDs){ // append a reflection if we're at the end
-        var reflectionView = new UserReflectionView({model:nodeModel, xyz:[x,y+Y_OFFSET,z+10]}).render().$el;
-        self.$el.append(reflectionView);
+        if(depth == treeDepth-1){
+          var reflectionView = new UserReflectionView({model:nodeModel, xyz:[x,y+Y_OFFSET,z+10]}).render().$el;
+          self.$el.append(reflectionView);
+        }
       } else {
         for(var i = 0; i < childIDs.length; i++){
 
