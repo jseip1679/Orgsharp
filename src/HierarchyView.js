@@ -30,9 +30,7 @@ var HierarchyView = Backbone.View.extend({
     });
 
     var X_INCR = 150;
-    var Y_OFFSET = 180;
-
-    console.log(treeDepth);
+    var Y_OFFSET = 100;
 
     var x = $(window).width()/2 - X_INCR/2;
     var y = 0;
@@ -45,7 +43,7 @@ var HierarchyView = Backbone.View.extend({
       var y = xyz[1];
       var z = xyz[2];
 
-      //ChildIDs is an array of all child ids for the current nodeID
+      //ChildIDs is an array of all child ids for the current nodeID 
       var childIDs = hierarchy[nodeId].children;
 
       //storage for children to traverse
@@ -54,16 +52,17 @@ var HierarchyView = Backbone.View.extend({
       //place the root model
       var nodeModel = model.get("users").get(nodeId);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
+
       console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", depth);
+      
       self.$el.append(nodeView);
       var yOffset = y + Y_OFFSET;
       depth = Math.floor(y / Y_OFFSET);
 
-      console.log(depth);
 
       if(!childIDs){ // append a reflection if we're at the end
         if(depth == treeDepth-1){
-          var reflectionView = new UserReflectionView({model:nodeModel, xyz:[x,y+Y_OFFSET,z+10]}).render().$el;
+          var reflectionView = new UserReflectionView({model:nodeModel, xyz:[x,y+180,z]}).render().$el;
           self.$el.append(reflectionView);
         }
       } else {
@@ -88,13 +87,13 @@ var HierarchyView = Backbone.View.extend({
 
   hover: function(){
     this.$el.css("-webkit-transform-style","preserve-3d");
-    this.$el.css("-webkit-transform",rotateAxis("Y",15));
-    this.$el.css("-webkit-transitionDuration","3s");
+    //this.$el.css("-webkit-transform",rotateAxis("Y",15));
+    //this.$el.css("-webkit-transitionDuration","3s");
   },
 
   unhover: function(){
     this.$el.css("-webkit-transform-style","preserve-3d");
-    this.$el.css("-webkit-transform",rotateAxis("Y",0));
-    this.$el.css("-webkit-transitionDuration","3s");
+    //this.$el.css("-webkit-transform",rotateAxis("Y",0));
+    //this.$el.css("-webkit-transitionDuration","3s");
   }
 });

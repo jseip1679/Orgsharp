@@ -25,6 +25,7 @@ var FlatView = Backbone.View.extend({
 
     var X_INCR = 150;
     var Y_OFFSET = 180;
+
     //WIP
     this.$el.append(users.map(function(user){
       x += X_INCR; //add  140px
