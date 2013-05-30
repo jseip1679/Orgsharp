@@ -41,15 +41,29 @@ var userData = [
     firstname:"Jane",
     lastname: "Doe",
     imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+  },
+  {
+    id: 6,
+    firstname:"Jane",
+    lastname: "Doe",
+    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+  },
+  {
+    id: 7,
+    firstname:"Jane",
+    lastname: "Doe",
+    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
   }
 ];
 
 var hierarchyData = {
-  depth:3,
+  depth:4,
   0:{"root":true, children: [1,3]},
   1:{children:[2,4,5]},
-  2:[],
-  3:[],
-  4:[],
-  5:[]
+  2:{},
+  3:{},
+  4:{},
+  5:{children:[7]},
+  6:{},
+  7:{}
 };
