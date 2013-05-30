@@ -13,7 +13,7 @@ var CameraView = Backbone.View.extend({
     //bind all window keydown events to this model
     var self = this;
     $('body').on('keydown', function(e){
-      self.logKey(e);
+      self.handleKeyInput(e);
     });
 
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
@@ -36,8 +36,25 @@ var CameraView = Backbone.View.extend({
     this.$el.css("-webkit-transitionDuration","2s");
   },
 
-  logKey: function(e){
-    console.log("Yay Keydown! ", e.keyCode);
+  handleKeyInput: function(e){
+    console.log("Yay Keypress! ", e.keyCode);
+    switch (e.keyCode){
+      case 37: //left
+        console.log("moving left");
+        this.dollyView.move(-50,0,0);
+      break;
+      case 39: //right
+        console.log("moving right");
+        this.dollyView.move(50,0,0);
+      break;
+      case 38: //up
+        console.log("moving up");
+        this.dollyView.move(0,50,0);
+      break;
+      case 40: //down
+        console.log("moving down");
+        this.dollyView.move(0,-50,0);
+      break;
+    }
   }
-
 });

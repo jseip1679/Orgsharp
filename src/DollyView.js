@@ -28,6 +28,14 @@ var DollyView = Backbone.View.extend({
   unhover: function(){
     this.$el.css("-webkit-transform",translate3d(0,0,0));
     this.$el.css("-webkit-transitionDuration","2s");
+  },
+
+  move: function(x,y,z){
+    this.$el.css("-webkit-transform",translate3d(x,y,z));
+    this.$el.css("-webkit-transitionDuration","2s");
+
   }
+
+
 
 });

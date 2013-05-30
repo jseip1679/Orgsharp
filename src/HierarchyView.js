@@ -39,9 +39,9 @@ var HierarchyView = Backbone.View.extend({
 
     var traverseTree = function(nodeId, hierarchy, xyz){
 
-      var x = xyz[0];
-      var y = xyz[1];
-      var z = xyz[2];
+      var x = xyz[0],
+          y = xyz[1],
+          z = xyz[2];
 
       //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;
@@ -65,11 +65,7 @@ var HierarchyView = Backbone.View.extend({
         }
       } else {
         for(var i = 0; i < childIDs.length; i++){
-
-          //place the first child to the left, the second child to the right, the third to the left + x
           var xOffset = x + X_INCR*offsetIndex(i);
-
-          //store each element that needs to be traversed in childrenToTraverseArrray;
           childrenToTraverse.push([childIDs[i],hierarchy,[xOffset,yOffset,0]]);
         }
         _.each(childrenToTraverse, function(v){
@@ -84,14 +80,10 @@ var HierarchyView = Backbone.View.extend({
   },
 
   hover: function(){
-    this.$el.css("-webkit-transform-style","preserve-3d");
-    //this.$el.css("-webkit-transform",rotateAxis("Y",15));
-    //this.$el.css("-webkit-transitionDuration","3s");
+
   },
 
   unhover: function(){
-    this.$el.css("-webkit-transform-style","preserve-3d");
-    //this.$el.css("-webkit-transform",rotateAxis("Y",0));
-    //this.$el.css("-webkit-transitionDuration","3s");
+
   }
 });

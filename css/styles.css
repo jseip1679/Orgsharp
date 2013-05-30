@@ -10,8 +10,10 @@ body {
 
 span {
   font-family: 'Alef', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
+  font-weight: 200;
+  font-size: 24px;
+  position:absolute;
+  padding: 5px 5px 5px 5px;
 }
 
 .user-view {
