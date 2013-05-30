@@ -54,6 +54,7 @@ span {
 }
 
 .hierarchy-view{
+  top:100px;
   -webkit-transform-style: preserve-3d;
   -webkit-perspective:800;
   position:relative;

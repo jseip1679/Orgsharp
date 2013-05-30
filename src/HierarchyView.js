@@ -32,6 +32,7 @@ var HierarchyView = Backbone.View.extend({
     var X_INCR = 150;
     var Y_OFFSET = 100;
 
+    //initial rendering positions
     var x = $(window).width()/2 - X_INCR/2;
     var y = 0;
     var z = 0;
@@ -56,7 +57,6 @@ var HierarchyView = Backbone.View.extend({
       self.$el.append(nodeView);
       var yOffset = y + Y_OFFSET;
       depth = Math.floor(y / Y_OFFSET);
-
 
       if(!childIDs){ // append a reflection if we're at the end
         if(depth == treeDepth-1){
