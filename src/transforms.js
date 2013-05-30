@@ -13,3 +13,7 @@ var offsetIndex = function(n){
     return n;
   }
 };
+
+var rotateAxes = function(x, y, z){
+  return "rotateX(" + x + "deg) " + "rotateY(" + y + "deg) " + "rotateZ(" + z + "deg)";
+};

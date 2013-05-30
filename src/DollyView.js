@@ -12,6 +12,7 @@ var DollyView = Backbone.View.extend({
   initialize: function(){
     this.orgView = new HierarchyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);
+    this.xyz = [0,0,0]; //initialize dolly coordinates to 000
   },
 
   render: function(){
@@ -21,18 +22,24 @@ var DollyView = Backbone.View.extend({
   },
 
   hover: function(){
-    this.$el.css("-webkit-transform",translate3d(0,0,0));
-    this.$el.css("-webkit-transitionDuration","2s");
+    // this.$el.css("-webkit-transform",translate3d(0,0,0));
+    // this.$el.css("-webkit-transitionDuration","2s");
   },
 
   unhover: function(){
-    this.$el.css("-webkit-transform",translate3d(0,0,0));
-    this.$el.css("-webkit-transitionDuration","2s");
+    // this.$el.css("-webkit-transform",translate3d(0,0,0));
+    // this.$el.css("-webkit-transitionDuration","2s");
   },
 
   move: function(x,y,z){
-    this.$el.css("-webkit-transform",translate3d(x,y,z));
-    this.$el.css("-webkit-transitionDuration","2s");
+    this.xyz[0] += x;
+    this.xyz[1] += y;
+    this.xyz[2] += z;
+
+    this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
+    this.$el.css("-webkit-transition-timing-function","ease-out");
+
+    this.$el.css("-webkit-transitionDuration","1s");
 
   }
 
