@@ -10,6 +10,12 @@ var CameraView = Backbone.View.extend({
   },
 
   initialize: function(){
+    //bind all window keydown events to this model
+    var self = this;
+    $('body').on('keydown', function(e){
+      self.logKey(e);
+    });
+
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);
   },
@@ -28,6 +34,10 @@ var CameraView = Backbone.View.extend({
   unhover: function(){
     this.$el.css("-webkit-transform","rotateY(0deg)");
     this.$el.css("-webkit-transitionDuration","2s");
+  },
+
+  logKey: function(e){
+    console.log("Yay Keydown! ", e.keyCode);
   }
 
 });

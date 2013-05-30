@@ -45,8 +45,6 @@ var HierarchyView = Backbone.View.extend({
 
       //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;
-
-      //storage for children to traverse
       var childrenToTraverse =[];
 
       //place the root model
@@ -55,7 +53,7 @@ var HierarchyView = Backbone.View.extend({
 
       console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", depth);
 
-       self.$el.append(nodeView);
+      self.$el.append(nodeView);
       var yOffset = y + Y_OFFSET;
       depth = Math.floor(y / Y_OFFSET);
 
