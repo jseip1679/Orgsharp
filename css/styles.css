@@ -147,4 +147,12 @@ data {
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
 }
 
+.reflected-hierarchy-view
+{
+  overflow: hidden;
+  height:1000px;
+  -webkit-mask-image: -webkit-gradient(linear, right top, right center, color-stop(0.55, transparent), color-stop(1.0, rgba(255, 255, 255, 0.55)));
+  
+}
+
 

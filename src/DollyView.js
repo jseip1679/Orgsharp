@@ -11,6 +11,7 @@ var DollyView = Backbone.View.extend({
 
   initialize: function(){
     this.orgView = new HierarchyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
+    this.reflectedOrgView = new ReflectedHierarchyView({model: this.model, hierarchy: this.options.hierarchy});
     this.listenTo(this.model, "change", this.render);
     this.xyz = [0,0,0]; //initialize dolly coordinates to 000
   },
@@ -18,6 +19,7 @@ var DollyView = Backbone.View.extend({
   render: function(){
     this.$el.children().detach();
     this.$el.append(this.orgView.render().el);
+    this.$el.append(this.reflectedOrgView.render().el);
     return this;
   },
 

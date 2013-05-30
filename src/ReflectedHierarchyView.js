@@ -1,12 +1,10 @@
-var HierarchyView = Backbone.View.extend({
+var ReflectedHierarchyView = Backbone.View.extend({
 
   tagName: "div",
-  className: "hierarchy-view",
+  className: "reflected-hierarchy-view",
 
   events: {
-    "mouseover": "hover",
-    "mouseleave": "unhover"
-  },
+ },
 
   initialize: function(params){
 
@@ -34,7 +32,7 @@ var HierarchyView = Backbone.View.extend({
 
     //initial rendering positions
     var x = $(window).width()/2 - X_INCR/2;
-    var y = 0;
+    var y = -Y_OFFSET/2;
     var z = 0;
     var curDepth = 0;
 
@@ -71,6 +69,8 @@ var HierarchyView = Backbone.View.extend({
 
     //Call traverse tree from the root node and append it to $el
     traverseTree(rootId, hierarchy, [x,y,z]);
+
+    this.$el.css("-webkit-transform","scaleY(-1) ");//+translate3d(0,-((treeDepth+1)*Y_OFFSET*2),0));
     return this;
   },
 
