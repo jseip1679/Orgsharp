@@ -19,14 +19,14 @@ var CameraView = Backbone.View.extend({
 
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);
-    this.xyzRot = [-5,-35,0]; //set the current rotation state to oz
-    this.xyzScale = [1,1,1];
+    this.xyzRot = [-5,-25,0]; //set the current rotation state to oz
+    this.dollyView.move(-300,0,-500);
 
     //fancy intro animation
     setTimeout(function(){
-      self.xyzRot = [0,0,0];
+      self.xyzRot = [-5,-5,0];
       self.render(3,"ease");
-    },800);
+    },2000);
   },
 
   render: function(transitionTime,transitionFunc){
@@ -60,20 +60,20 @@ var CameraView = Backbone.View.extend({
 
     switch (e.keyCode){
       case 37: //left
-        this.xyzRot[1] += ROTATION_DEG;
-        // this.dollyView.move(-50,0,0);
+        //this.xyzRot[1] += ROTATION_DEG;
+        this.dollyView.move(-50,0,0);
       break;
       case 39: //right
-        this.xyzRot[1] -= ROTATION_DEG;
-        // this.dollyView.move(50,0,0);
+        //this.xyzRot[1] -= ROTATION_DEG;
+        this.dollyView.move(50,0,0);
       break;
       case 38: //up
         // this.xyzRot[0] -= ROTATION_DEG;
-        this.dollyView.move(0,-50,0);
+        this.dollyView.move(0,0,-50);
       break;
       case 40: //down
         // this.xyzRot[0] += ROTATION_DEG;
-        this.dollyView.move(0,50,0);
+        this.dollyView.move(0,0,50);
       break;
     }
     this.$el.css("-webkit-transform", rotateAxes(this.xyzRot[0],this.xyzRot[1],this.xyzRot[2]));
