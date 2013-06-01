@@ -19,7 +19,6 @@ var UserView = Backbone.View.extend({
   initialize: function(){
     //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
-
   },
 
   render: function(){
@@ -34,6 +33,7 @@ var UserView = Backbone.View.extend({
   },
 
   hover: function(){
+    this.model.trigger("hasFocus");
     var x = this.options.xyz[0];
     var y = this.options.xyz[1];
     var z = this.options.xyz[2];

@@ -29,7 +29,7 @@
     <script src="./src/CameraView.js"></script>
 
     <!-- Source Helpers -->
-    <script src="./src/transforms.js"></script>
+    <script src="./src/Helpers.js"></script>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
@@ -37,15 +37,15 @@
 </head>
 
   <body>
-    <!--Begin Camera and Dolly-->
-    <div class="org-chart">
+    <header>
       <span>OrgSharp</span>
+    </header>
+
+    <div class="org-chart">
     </div>
     <script>
       //on document ready, start the router
       $(function(){
-        //keypress does not work on arrow keys 
-        //setup key delegation to the root camera view  
         var start = new Router();
       })
     </script>

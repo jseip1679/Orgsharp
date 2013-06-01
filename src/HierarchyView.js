@@ -10,36 +10,34 @@ var HierarchyView = Backbone.View.extend({
 
   initialize: function(params){
 
-
   },
 
   render: function(){
+    this.$el.children().detach();
 
     var rootId,
         hierarchy = this.options.hierarchy.attributes,
-        treeDepth = hierarchy.depth;
         model = this.model;
         self = this;
 
     //find the top of the hierarchy(root)
-   _.find(hierarchy, function(v,k){
+    _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
         rootId = k;
         return true;
       }
     });
 
-    var X_INCR = 150;
-    var Y_OFFSET = 100;
+    var X_INCR = 150,
+        Y_OFFSET = 100;
 
     //initial rendering positions
-    var x = $(window).width()/2 - X_INCR/2;
-    var y = 0;
-    var z = 0;
-    var curDepth = 0;
+    var x = $(window).width()/2 - X_INCR/2,
+        y = 0,
+        z = 0,
+        curDepth = 0;
 
     var traverseTree = function(nodeId, hierarchy, xyz){
-
       var x = xyz[0],
           y = xyz[1],
           z = xyz[2];
@@ -48,7 +46,7 @@ var HierarchyView = Backbone.View.extend({
       var childIDs = hierarchy[nodeId].children;
       var childrenToTraverse =[];
 
-      //place the root model
+      //place the current model
       var nodeModel = model.get("users").get(nodeId);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
 
@@ -56,7 +54,7 @@ var HierarchyView = Backbone.View.extend({
 
       self.$el.append(nodeView);
       var yOffset = y + Y_OFFSET;
-      curDepth = Math.floor(y / Y_OFFSET);
+      curDepth++;
 
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
@@ -69,7 +67,6 @@ var HierarchyView = Backbone.View.extend({
       }
     };
 
-    //Call traverse tree from the root node and append it to $el
     traverseTree(rootId, hierarchy, [x,y,z]);
     return this;
   },

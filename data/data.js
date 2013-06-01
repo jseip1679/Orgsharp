@@ -2,14 +2,11 @@
 var userData = [
   {
     id: 0,
-    firstname:"Jake",
-    lastname: "Seip",
+    firstname:"Joe",
+    lastname: "Ceo",
     age: "28",
     mobile: "+1 (410) 819 6666",
     title: "Programmer",
-    email: "jake.seip@gmail.com",
-    imgUrl: "http://m3.licdn.com/mpr/pub/image-Z2Nf9njxRb9xp8FVXNle4CxBPRc048MHZ22iRrlxPERpuvUxZ2NiuR8xPvEEuRfduawI/jake-seip.jpg",
-    employeeIds:{}
   },
   {
     id: 1,
@@ -57,7 +54,6 @@ var userData = [
 ];
 
 var hierarchyData = {
-  depth:4,
   0:{"root":true, children: [1,3]},
   1:{children:[2,4,5]},
   2:{},

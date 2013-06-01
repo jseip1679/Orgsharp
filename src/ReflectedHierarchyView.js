@@ -20,7 +20,7 @@ var ReflectedHierarchyView = Backbone.View.extend({
         self = this;
 
     //find the top of the hierarchy(root)
-   _.find(hierarchy, function(v,k){
+    _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
         rootId = k;
         return true;
@@ -67,7 +67,6 @@ var ReflectedHierarchyView = Backbone.View.extend({
       }
     };
 
-    //Call traverse tree from the root node and append it to $el
     traverseTree(rootId, hierarchy, [x,y,z]);
 
     this.$el.css("-webkit-transform","scaleY(-1) ");//+translate3d(0,-((treeDepth+1)*Y_OFFSET*2),0));

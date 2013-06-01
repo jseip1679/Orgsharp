@@ -34,9 +34,9 @@ var DollyView = Backbone.View.extend({
   },
 
   move: function(x,y,z){
-    this.xyz[0] += x;
-    this.xyz[1] += y;
-    this.xyz[2] += z;
+    this.xyz[0] = (this.xyz[0]+ x);
+    this.xyz[1] = (this.xyz[1]+ y);
+    this.xyz[2] = (this.xyz[2]+ z);
 
     this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");

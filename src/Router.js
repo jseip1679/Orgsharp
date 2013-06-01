@@ -5,7 +5,6 @@ var Router = Backbone.Router.extend({
   },
 
   initialize: function(){
-    //Generate users, app, and view
     this.hierarchy = new Hierarchy(hierarchyData);
     this.users = new Users(userData); //collection of many 'user'
     this.app = new App({users: this.users}); //passed users as a parameter
