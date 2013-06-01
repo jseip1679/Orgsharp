@@ -4,70 +4,71 @@ var ReflectedHierarchyView = Backbone.View.extend({
   className: "reflected-hierarchy-view",
 
   events: {
- },
-
-  initialize: function(params){
-
-
+    "mouseover": "hover",
+    "mouseleave": "unhover"
   },
 
-  render: function(){
-
-    var rootId,
-        hierarchy = this.options.hierarchy.attributes,
-        treeDepth = hierarchy.depth;
-        model = this.model;
+  initialize: function(params){
+    var hierarchy = this.options.hierarchy.attributes,
         self = this;
 
-    //find the top of the hierarchy(root)
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
-        rootId = k;
+        self.rootId = k; //set the root id
         return true;
       }
     });
 
-    var X_INCR = 150;
-    var Y_OFFSET = 100;
+  },
+
+  render: function(){
+    this.$el.children().detach();
+
+    var hierarchy = this.options.hierarchy.attributes,
+        model = this.model;
+        self = this,
+        treeDepth = hierarchy.treeDepth;
+
+    var X_INCR = 150,
+        Y_INCR = 180;
 
     //initial rendering positions
-    var x = $(window).width()/2 - X_INCR/2;
-    var y = -Y_OFFSET/2;
-    var z = 0;
+    var x = $(window).width()/2 - X_INCR/2,
+        y = 0,
+        z = 0;
+
     var curDepth = 0;
 
     var traverseTree = function(nodeId, hierarchy, xyz){
-
       var x = xyz[0],
           y = xyz[1],
           z = xyz[2];
 
       //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;
-      var childrenToTraverse =[];
 
-      //place the root model
+      //place the current model
       var nodeModel = model.get("users").get(nodeId);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
+      curDepth++;
+
+      console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", curDepth);
 
       self.$el.append(nodeView);
-      var yOffset = y + Y_OFFSET;
-      curDepth = Math.floor(y / Y_OFFSET);
+      var yOffset = y + Y_INCR;
 
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
-          var xOffset = x + X_INCR*offsetIndex(i);
-          childrenToTraverse.push([childIDs[i],hierarchy,[xOffset,yOffset,0]]);
+          console.log(treeDepth,curDepth);
+          var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
+          traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,0]);
         }
-        _.each(childrenToTraverse, function(v){
-          traverseTree(v[0], v[1], v[2]);
-        });
       }
+      curDepth--;
     };
 
-    traverseTree(rootId, hierarchy, [x,y,z]);
-
-    this.$el.css("-webkit-transform","scaleY(-1) ");//+translate3d(0,-((treeDepth+1)*Y_OFFSET*2),0));
+    traverseTree(this.rootId, hierarchy, [x,y,z]);
+    this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(0,-((treeDepth+1)*Y_INCR*2),0));
     return this;
   },
 
