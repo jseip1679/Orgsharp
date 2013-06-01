@@ -54,6 +54,7 @@ var userData = [
 ];
 
 var hierarchyData = {
+  treeDepth: 3,
   0:{"root":true, children: [1,3]},
   1:{children:[2,4,5]},
   2:{},
