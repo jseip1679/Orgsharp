@@ -15,7 +15,6 @@ var Router = Backbone.Router.extend({
       // console.log("Navigating to:" + user.get('firstname'));
     }, this);
 
-    //Append our newly created views to the DOM
     $('.org-chart').append(this.cameraView.render().el);
   },
 
