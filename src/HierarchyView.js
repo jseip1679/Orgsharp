@@ -61,7 +61,7 @@ var HierarchyView = Backbone.View.extend({
         for(var i = 0; i < childIDs.length; i++){
           var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
           self.$el.append($(generateSVG(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2)));
-          traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,0]);
+          traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,1]);
         }
       }
       curDepth--;

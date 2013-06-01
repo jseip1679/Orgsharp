@@ -19,8 +19,8 @@ var CameraView = Backbone.View.extend({
 
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);
-    this.xyzRot = [-5,-25,0]; //set the current rotation state to oz
-    this.dollyView.move(-300,0,-500);
+    this.xyzRot = [-5,-15,0]; //set the current rotation state to oz
+    this.dollyView.move(-300,0,-800);
 
     //fancy intro animation
     setTimeout(function(){
