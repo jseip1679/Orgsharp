@@ -19,14 +19,15 @@ var CameraView = Backbone.View.extend({
 
     this.dollyView = new DollyView({model: this.model, hierarchy: this.options.hierarchy}); //passed app and hierarchy Data
     this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model.attributes.users, "requestFocus", this.focusOnCoordinates);
+
     this.xyzRot = [-5,-15,0]; //set the current rotation state to oz
-    this.dollyView.move(-300,0,-800);
 
     //fancy intro animation
     setTimeout(function(){
       self.xyzRot = [-5,-5,0];
       self.render(3,"ease");
-    },2000);
+    },1000);
   },
 
   render: function(transitionTime,transitionFunc){
@@ -79,5 +80,10 @@ var CameraView = Backbone.View.extend({
     this.$el.css("-webkit-transform", rotateAxes(this.xyzRot[0],this.xyzRot[1],this.xyzRot[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");
     this.$el.css("-webkit-transitionDuration",DURATION+"s");
+  },
+
+  focusOnCoordinates: function(coords){
+    //TODO add better logic for focusing in on a given coordinate
+    this.dollyView.centerOnCoords(coords[0],coords[1],coords[2]);
   }
 });
