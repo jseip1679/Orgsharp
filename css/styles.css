@@ -112,9 +112,8 @@ data {
 .reflected-hierarchy-view
 {
    top:100px;
-   width:1000px;
-   height:1000px;
-  -webkit-transform-style: preserve-3d;
+   width:1200px;
+   height:750px;
   -webkit-perspective:800;
   position:absolute;
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));

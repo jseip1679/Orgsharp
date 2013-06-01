@@ -68,7 +68,7 @@ var ReflectedHierarchyView = Backbone.View.extend({
     };
 
     traverseTree(this.rootId, hierarchy, [x,y,z]);
-    this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(0,-((treeDepth+1)*Y_INCR*2),0));
+    this.$el.css("-webkit-transform","scaleY(-1) "+translate3d(0,-((treeDepth+1)*Y_INCR),0));
     return this;
   },
 
