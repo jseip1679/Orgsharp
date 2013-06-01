@@ -8,6 +8,11 @@ body {
   padding: 0;
 }
 
+svg {
+  position:absolute;
+  z-index: -5;
+}
+
 span {
   font-family: 'Alef', sans-serif;
   font-weight: 200;
@@ -116,7 +121,7 @@ data {
    height:750px;
   -webkit-perspective:800;
   position:absolute;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.65, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
 }
 
 

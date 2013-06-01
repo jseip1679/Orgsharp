@@ -52,14 +52,13 @@ var ReflectedHierarchyView = Backbone.View.extend({
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
       curDepth++;
 
-      console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", curDepth);
+      //console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", curDepth);
 
       self.$el.append(nodeView);
       var yOffset = y + Y_INCR;
 
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
-          console.log(treeDepth,curDepth);
           var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
           traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,0]);
         }

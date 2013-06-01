@@ -17,3 +17,12 @@ var offsetIndex = function(n){
 var rotateAxes = function(x, y, z){
   return "rotateX(" + x + "deg) " + "rotateY(" + y + "deg) " + "rotateZ(" + z + "deg)";
 };
+
+
+var generateSVG = function (x1,y1,x2,y2){
+  var xCtrl = Math.floor((x1+x2)*0.5);
+  var yCtrl = Math.floor((y1+y2)*0.5);
+  console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
+  return "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"><path d=\"M"+x1+","+y1+" Q"+xCtrl+","+yCtrl+" " +x2+","+y2+"\" fill=\"none\" stroke=\"#888888\" stroke-width=\"4\" /></svg>";
+};
+
