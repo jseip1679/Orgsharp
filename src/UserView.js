@@ -13,13 +13,13 @@ var UserView = Backbone.View.extend({
                         </div>'),
   events: {
     "mouseover" : "hover",
-    "mouseleave" : "unhover"
+    "mouseleave" : "unhover",
+    "click" : "selected"
   },
 
   initialize: function(){
     //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
-    //this.listenTo(this.model,"hasFocus", this.hover);
   },
 
   render: function(){
@@ -34,7 +34,6 @@ var UserView = Backbone.View.extend({
   },
 
   hover: function(){
-    this.model.trigger("hasFocus");
     var x = this.options.xyz[0];
     var y = this.options.xyz[1];
     var z = this.options.xyz[2];
@@ -46,8 +45,6 @@ var UserView = Backbone.View.extend({
   },
 
   unhover: function(){
-    this.model.trigger("lostFocus");
-
     var x = this.options.xyz[0];
     var y = this.options.xyz[1];
     var z = this.options.xyz[2];
@@ -55,6 +52,9 @@ var UserView = Backbone.View.extend({
     this.$el.css("border-color","#8aaacc");
     this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+0));
     this.$el.css("-webkit-transitionDuration","1s");
-  }
+  },
 
+  selected: function(){
+    this.model.trigger("selected",this.model);
+  }
 });

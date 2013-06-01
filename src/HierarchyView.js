@@ -42,7 +42,7 @@ var HierarchyView = Backbone.View.extend({
     var traverseTree = function(nodeId, hierarchy, xyz){
       var x = xyz[0],
           y = xyz[1],
-          z = xyz[2];
+          z = xyz[2]+1;
 
       //ChildIDs is an array of all child ids for the current nodeID
       var childIDs = hierarchy[nodeId].children;

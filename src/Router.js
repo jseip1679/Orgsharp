@@ -1,7 +1,7 @@
 var Router = Backbone.Router.extend({
   routes: {
     "": "home",
-    "user":"user"
+    "users":"users"
   },
 
   initialize: function(){
@@ -9,6 +9,11 @@ var Router = Backbone.Router.extend({
     this.users = new Users(userData); //collection of many 'user'
     this.app = new App({users: this.users}); //passed users as a parameter
     this.cameraView = new CameraView({model: this.app, hierarchy: this.hierarchy}); //passed app and hierarchy Data
+
+    this.users.on('selected', function(user){
+      this.navigate("users/"+user.get('firstname') +user.get('lastname'));
+      // console.log("Navigating to:" + user.get('firstname'));
+    }, this);
 
     //Append our newly created views to the DOM
     $('.org-chart').append(this.cameraView.render().el);
