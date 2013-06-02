@@ -64,7 +64,7 @@ var DollyView = Backbone.View.extend({
   },
 
   centerOnCoords: function(x,y,z){
-    console.log("Requested to move to",x,y,z," from ", this.xyz);
+    // console.log("Requested to move to",x,y,z," from ", this.xyz);
 
     var centWidth = $(window).width()/2;
     var centHeight = $(window).height()/2;
@@ -73,7 +73,7 @@ var DollyView = Backbone.View.extend({
     this.xyz[1] = centHeight-y+this.Y_START-90;
     this.xyz[2] = (this.Z_START)/2;
 
-    console.log("Final calculated position was: ", this.xyz);
+    // console.log("Final calculated position was: ", this.xyz);
 
     this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");

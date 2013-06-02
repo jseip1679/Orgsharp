@@ -114,6 +114,40 @@ data {
   padding-bottom: 5px;
 }
 
+.big-user-view-container {
+  position:absolute;
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.75);
+  right: 0.5%;
+  top: 100px;
+  width: 300px;
+  height: 400px;
+  padding-bottom: 5px;
+  border-width: 2px 2px 2px px;
+  border-color: #8aaacc;
+  border-style: solid;
+  border-radius: 0.5em;
+
+}
+
+.big-user-view img {
+  float: left;
+  width: 160px;
+  height: 160px;
+  padding: 10px 10px 10px 10px;
+}
+
+.big-user-view input{
+  margin-bottom: 2px;
+  background-color: inherit;
+  width: 80%;
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .reflected-hierarchy-view
 {
    top:100px;

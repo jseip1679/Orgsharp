@@ -45,19 +45,17 @@ var CameraView = Backbone.View.extend({
   },
 
   hover: function(){
-    // this.$el.css("-webkit-transform","rotateY(15deg)");
-    // this.$el.css("-webkit-transitionDuration","2s");
   },
 
   unhover: function(){
-    // this.$el.css("-webkit-transform","rotateY(0deg)");
-    // this.$el.css("-webkit-transitionDuration","2s");
   },
 
   handleKeyInput: function(e){
     var ROTATION_DEG = 5;
     var DURATION = 1;
     var currentRotation;
+
+    console.log(e.keyCode);
 
     switch (e.keyCode){
       case 37: //left
@@ -76,6 +74,12 @@ var CameraView = Backbone.View.extend({
         // this.xyzRot[0] += ROTATION_DEG;
         this.dollyView.move(0,0,50);
       break;
+      case 187: //plus
+        this.xyzRot[1] += ROTATION_DEG;
+      break;
+      case 189: //minus
+        this.xyzRot[1] -= ROTATION_DEG;
+      break;
     }
     this.$el.css("-webkit-transform", rotateAxes(this.xyzRot[0],this.xyzRot[1],this.xyzRot[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");
@@ -83,7 +87,6 @@ var CameraView = Backbone.View.extend({
   },
 
   focusOnCoordinates: function(coords){
-    //TODO add better logic for focusing in on a given coordinate
     this.dollyView.centerOnCoords(coords[0],coords[1],coords[2]);
   }
 });
