@@ -35,6 +35,8 @@ var Router = Backbone.Router.extend({
     var target = this.users.get(params);
     if(target){
       target.trigger("selected",target);
+      target.trigger("requestFocus",target.get("xyz"));
+
     }
   }
 });

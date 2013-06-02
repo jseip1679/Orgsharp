@@ -20,6 +20,7 @@ var UserView = Backbone.View.extend({
   initialize: function(){
     //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
+    this.model.set("xyz",this.options.xyz); //set xyz on the model attribute
   },
 
   render: function(){
@@ -56,7 +57,7 @@ var UserView = Backbone.View.extend({
 
   selected: function(){
     this.model.trigger("selected",this.model);
-    this.model.trigger("requestFocus",this.options.xyz);
+    this.model.trigger("requestFocus",this.model.get("xyz"));
 
   }
 });
