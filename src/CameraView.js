@@ -55,7 +55,7 @@ var CameraView = Backbone.View.extend({
     var DURATION = 1;
     var currentRotation;
 
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
 
     switch (e.keyCode){
       case 37: //left
@@ -75,12 +75,13 @@ var CameraView = Backbone.View.extend({
         this.dollyView.move(0,0,50);
       break;
       case 187: //plus
-        this.xyzRot[1] += ROTATION_DEG;
+        this.xyzRot[1] = Math.min(this.xyzRot[1] + ROTATION_DEG,45);
       break;
       case 189: //minus
-        this.xyzRot[1] -= ROTATION_DEG;
+        this.xyzRot[1] = Math.max(this.xyzRot[1] - ROTATION_DEG,-45);
       break;
     }
+
     this.$el.css("-webkit-transform", rotateAxes(this.xyzRot[0],this.xyzRot[1],this.xyzRot[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");
     this.$el.css("-webkit-transitionDuration",DURATION+"s");

@@ -41,7 +41,7 @@ var UserView = Backbone.View.extend({
 
     this.$el.css("border-color","red");
     this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+3));
-    this.$el.css("-webkit-transitionDuration",".5s");
+    this.$el.css("-webkit-transitionDuration","0.5s");
 
   },
 
@@ -58,6 +58,5 @@ var UserView = Backbone.View.extend({
   selected: function(){
     this.model.trigger("selected",this.model);
     this.model.trigger("requestFocus",this.model.get("xyz"));
-
   }
 });

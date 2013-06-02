@@ -18,7 +18,6 @@ var ReflectedHierarchyView = Backbone.View.extend({
         return true;
       }
     });
-
   },
 
   render: function(){

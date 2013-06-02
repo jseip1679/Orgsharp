@@ -19,6 +19,8 @@ var HierarchyView = Backbone.View.extend({
       }
     });
 
+    updateTreeDepth(hierarchy);
+
   },
 
   render: function(){
