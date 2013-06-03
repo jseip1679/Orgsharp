@@ -21,6 +21,7 @@ span {
   font-size: 24px;
   position:relative;
   overflow: hidden;
+  width:300px;
   padding: 10px 10px 10px 15px;
 }
 
@@ -50,6 +51,26 @@ header {
   border-width: 2px;
   display: inline-block;
   padding: 10px 10px 10px 10px;
+}
+
+.log-in-view {
+  top: 0;
+  position: absolute;
+  right: 0;
+  padding: 5px 5px 5px 5px;
+}
+
+.log-in-view label{
+  padding-left: 15px;
+  padding-right: 5px;
+  color: white;
+  font-family: inherit;
+  font-style: italic;
+}
+
+.log-in-view input{
+  color: black;
+  font-family: tahoma;
 }
 
 .flat-view{
