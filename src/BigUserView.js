@@ -6,14 +6,17 @@ var BigUserView = Backbone.View.extend({
   className: "big-user-view",
 
   //using underscore's templating system.
-  template: _.template('<div>\
-                          <img src=<%= imgUrl %>></img><br>\
-                          <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
-                          <input type="tel" value="<%= mobile %>"></input><br>\
-                          <input type="email" value="<%= email %>"></input>\
-                        </div>'),
+  template: _.template('<img class="big-user-profile-image" src=<%= imgUrl %>></img><br>\
+                        <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
+                        <input type="tel" value="<%= mobile %>"></input><br>\
+                        <input type="email" value="<%= email %>"></input>\
+                        <img class="edit-user-icon" src="./img/png/glyphicons_030_pencil.png">\
+                        <img class="add-user-icon" src="./img/png/glyphicons_006_user_add.png">'),
   events: {
-    "click" : "selected"
+    "mouseover .edit-user-icon" : "hoverEdit",
+    "mouseleave .edit-user-icon" : "unhoverEdit",
+    "mouseover .add-user-icon" : "hoverAdd",
+    "mouseleave .add-user-icon" : "unhoverAdd"
   },
 
   initialize: function(){
@@ -27,11 +30,20 @@ var BigUserView = Backbone.View.extend({
     return this;
   },
 
-  hover: function(){this.$el.css("-webkit-transitionDuration","1s");
-
+  hoverEdit: function(){
+    this.$el.find(".edit-user-icon").toggleClass("invert");
   },
 
-  unhover: function(){
+  unhoverEdit: function(){
+    this.$el.find(".edit-user-icon").toggleClass("invert");
+  },
+
+  hoverAdd: function(){
+    this.$el.find(".add-user-icon").toggleClass("invert");
+  },
+
+  unhoverAdd: function(){
+    this.$el.find(".add-user-icon").toggleClass("invert");
   },
 
   selected: function(){

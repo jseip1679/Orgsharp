@@ -38,11 +38,17 @@ header {
 
 }
 
+
+.invert {
+  -webkit-filter: invert(100%);
+}
+
 .user-view {
+  font-family: “Lucida Sans Unicode”, sans-serif
   -webkit-transform-style: preserve-3d;
   background-color: white;
   position: absolute;
-  min-width: 110px;
+  width: 110px;
   max-width: 50%;
   border-style: solid;
   margin: 5px 5px 5px 5px;
@@ -51,6 +57,32 @@ header {
   border-width: 2px;
   display: inline-block;
   padding: 10px 10px 10px 10px;
+}
+
+.user-view .add-user-icon {
+  width: 10px;
+  height: 10px;
+  right: 2%;
+  bottom: 0.5%;
+  position: fixed;
+}
+
+.big-user-view .edit-user-icon {
+  width: 20px;
+  height: 20px;
+  left: 2% ;
+  bottom: 1%;
+  position: absolute;
+  display: inline-block;
+}
+
+.big-user-view .add-user-icon {
+  width: 20px;
+  height: 20px;
+  right: 2% ;
+  bottom: 1%;
+  position: absolute;
+  display: inline-block;
 }
 
 .log-in-view {
@@ -99,33 +131,38 @@ header {
   position:relative;
 }
 
-.user-view input[type="text"]{
-  width: 100px;
-  display: inline;
-  background-color: inherit;
+.user-view .user-name{
+  width: 100%;
+  font-size: 12px;
+  margin-top: 2px;
   border: none;
-  box-shadow: none;
+  background-color: inherit;
   margin-bottom: 2px;
+  display: inline-block;
 }
 
 
-.user-view input[type="email"] {
-  width: 100px;
-  font-size: 10px;
+.user-view .user-email {
+  width: 100%;
+  font-size: 12px;
+  margin-top: 2px;
   border: none;
   background-color: inherit;
-
-  box-shadow: none;
   margin-bottom: 2px;
+  display: inline-block;
+
 }
 
-.user-view  input[type="tel"] {
+.user-view .user-phone{
   margin-bottom: 2px;
   background-color: inherit;
-  width: 100px;
-  font-size: 10px;
+  width: 100%;
+  padding-top: 2px;
+  margin-top: 2px;
+
+  font-size: 12px;
   border: none;
-  box-shadow: none;
+  display: inline-block;
 }
 
 data {
@@ -155,7 +192,7 @@ data {
 
 }
 
-.big-user-view img {
+.big-user-profile-image {
   float: left;
   width: 160px;
   height: 160px;
@@ -171,6 +208,11 @@ data {
   box-shadow: none;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.big-user-view{
+  width: 100%
+  position:fixed;
 }
 
 .reflected-hierarchy-view

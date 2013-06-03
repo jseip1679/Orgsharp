@@ -7,9 +7,10 @@ var UserView = Backbone.View.extend({
   //using underscore's templating system.
   template: _.template('<div>\
                           <img src=<%= imgUrl %>></img><br>\
-                          <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
-                          <input type="tel" value="<%= mobile %>"></input><br>\
-                          <input type="email" value="<%= email %>"></input>\
+                          <p class="user-name"><%= firstname %> <%= lastname %></p><br>\
+                          <p class="user-phone"><%= mobile %></p><br>\
+                          <p class="user-email"><%= email %></p>\
+                          <img class="add-user-icon" src="./img/png/glyphicons_006_user_add.png">\
                         </div>'),
   events: {
     "mouseover" : "hover",
