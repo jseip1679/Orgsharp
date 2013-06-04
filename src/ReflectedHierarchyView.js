@@ -12,6 +12,10 @@ var ReflectedHierarchyView = Backbone.View.extend({
     var hierarchy = this.options.hierarchy.attributes,
         self = this;
 
+    this.listenTo(this.model.attributes.users, "add", function(){
+      this.render();
+      },this);
+    
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
         self.rootId = k; //set the root id

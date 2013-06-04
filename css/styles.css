@@ -13,6 +13,7 @@ svg {
   position:absolute;
   width: 10000px;
   left: -5000px;
+  height:  10000px;
 }
 
 span {
@@ -45,6 +46,10 @@ header {
   -webkit-filter: invert(100%);
 }
 
+.half-invert {
+  -webkit-filter: invert(50%);
+}
+
 .user-view {
   font-family: “Lucida Sans Unicode”, sans-serif
   -webkit-transform-style: preserve-3d;
@@ -59,6 +64,7 @@ header {
   border-width: 2px;
   display: inline-block;
   padding: 10px 10px 10px 10px;
+  z-index: 2;
 }
 
 .user-view .add-user-icon {
