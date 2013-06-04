@@ -26,8 +26,17 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
   yCtrl = Math.floor((y1+y2)*0.35);
 
   center = center || 0;
+
+  var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+  newLine.setAttribute("x1",""+(x1+center));
+  newLine.setAttribute("x2",""+(x2+center));
+  newLine.setAttribute("y1",""+y1);
+  newLine.setAttribute("y2",""+y2);
+  newLine.setAttribute("stroke-width","2");
+  newLine.setAttribute("stroke","white");
+
   //console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
-  return "<path d=\"M"+(x1+center)+","+y1+" Q"+(xCtrl+center)+","+yCtrl+" " +(x2+center)+","+y2+"\" fill=\"none\" stroke=\"#888888\" stroke-width=\"4\" />";
+  return newLine;
 };
 
 var updateTreeDepth = function(hierarchyData){ //TODO FIXME
