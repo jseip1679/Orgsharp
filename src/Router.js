@@ -49,7 +49,7 @@ var Router = Backbone.Router.extend({
 
       //set the parentID for each of TBDel's children
       _.each(TBDelModel.children, function(childID){
-        this.hierarchy.set(childID, {parent:parentID});
+        this.hierarchy.set({id:childID, parent:parentID}); //TODO FIX THIS  
       },this);
 
       //remove the tbDelModel from both users and hierarchy
@@ -62,7 +62,6 @@ var Router = Backbone.Router.extend({
 
       console.log("Hierarchy after the operation:",this.hierarchy.attributes);
       console.log(this.users);
-
 
     },this);
 

@@ -54,12 +54,13 @@ var userData = [
 ];
 
 var hierarchyData = {
-  treeDepth: 3,
+  treeDepth: 4,
   0:{"root":true, parent: null, children: [1,3]},
   1:{parent: 0, children:[2,4,5]},
   2:{parent: 1, children:[]},
   3:{parent: 0, children:[]},
   4:{parent: 1, children:[]},
   5:{parent: 1, children:[6]},
-  6:{parent: 5, children:[]}
+  6:{parent: 5, children:[7]},
+  7:{parent: 6, children:[]}
 };
