@@ -68,11 +68,11 @@ var CameraView = Backbone.View.extend({
       break;
       case 38: //up
         // this.xyzRot[0] -= ROTATION_DEG;
-        this.dollyView.move(0,0,-50);
+        this.dollyView.move(0,0,-100);
       break;
       case 40: //down
         // this.xyzRot[0] += ROTATION_DEG;
-        this.dollyView.move(0,0,50);
+        this.dollyView.move(0,0,100);
       break;
       case 187: //plus
         this.xyzRot[1] = Math.min(this.xyzRot[1] + ROTATION_DEG,45);

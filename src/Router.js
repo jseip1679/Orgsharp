@@ -61,6 +61,8 @@ var Router = Backbone.Router.extend({
       // this.hierarchy.set("treeDepth",newTreeDepth);
 
       console.log("Hierarchy after the operation:",this.hierarchy.attributes);
+      console.log(this.users);
+
 
     },this);
 
