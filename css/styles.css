@@ -9,11 +9,11 @@ body {
 }
 
 svg {
-  z-index: -5;
-  position:absolute;
-  width: 10000px;
-  left: -5000px;
-  height:  10000px;
+  z-index: -1;
+  position:fixed;
+  /*width: 10000px;*/
+  /*left: -5000px;*/
+  /*height:  10000px;*/
 }
 
 span {

@@ -5,8 +5,6 @@ var DollyView = Backbone.View.extend({
   className: "dolly-view",
 
   events: {
-    "mouseover" : "hover",
-    "mouseleave" : "unhover"
   },
 
   initialize: function(){
@@ -31,16 +29,6 @@ var DollyView = Backbone.View.extend({
     return this;
   },
 
-  hover: function(){
-    // this.$el.css("-webkit-transform",translate3d(0,0,0));
-    // this.$el.css("-webkit-transitionDuration","2s");
-  },
-
-  unhover: function(){
-    // this.$el.css("-webkit-transform",translate3d(0,0,0));
-    // this.$el.css("-webkit-transitionDuration","2s");
-  },
-
   move: function(x,y,z){
     this.xyz[0] = (this.xyz[0]+ x);
     this.xyz[1] = (this.xyz[1]+ y);
@@ -48,9 +36,7 @@ var DollyView = Backbone.View.extend({
 
     this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");
-
     this.$el.css("-webkit-transitionDuration","1s");
-
   },
 
   moveAbsolute: function(x,y,z){

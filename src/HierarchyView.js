@@ -63,8 +63,8 @@ var HierarchyView = Backbone.View.extend({
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
           var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
-          var $svg = $(generateSVG(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2,5000));
-          $svg.css("-webkit-transform",translate3d(0,0,-1));
+          var $svg = generateSVG(0+X_INCR/2,0+Y_INCR/2,xOffset-x+X_INCR/2,yOffset-y+Y_INCR/2);
+          $svg.css("-webkit-transform",translate3d(x,y,z-1));
           self.$el.append($svg);
           traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,1]);
         }

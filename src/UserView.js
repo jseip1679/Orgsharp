@@ -16,7 +16,9 @@ var UserView = Backbone.View.extend({
     "mouseover" : "hover",
     "mouseleave" : "unhover",
     "click" : "selected",
-    "mouseover .add-user-icon" : "hoverToggle"
+    "mouseover .add-user-icon" : "hoverToggle",
+    "mouseleave .add-user-icon" : "hoverToggle"
+
   },
 
   initialize: function(){
@@ -53,7 +55,7 @@ var UserView = Backbone.View.extend({
     var z = this.options.xyz[2];
 
     this.$el.css("border-color","#8aaacc");
-    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+0));
+    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+1));
     this.$el.css("-webkit-transitionDuration","0.5s");
   },
 
