@@ -13,6 +13,7 @@ var HierarchyView = Backbone.View.extend({
     var hierarchy = this.options.hierarchy.attributes,
         self = this;
 
+
     this.listenTo(this.model.attributes.users, "add", function(){
       this.render();
       },this);
@@ -27,6 +28,9 @@ var HierarchyView = Backbone.View.extend({
 
   render: function(){
     this.$el.children().detach();
+
+    $svg = $('<svg xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>');
+    this.$el.append($svg);
 
     var hierarchy = this.options.hierarchy.attributes,
         model = this.model;
@@ -62,20 +66,10 @@ var HierarchyView = Backbone.View.extend({
 
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
-          var offIndex = offsetIndex(i);
-          var xOffset = x + X_INCR*offIndex*(treeDepth-curDepth);
 
-          var svgXOffset =  Math.abs(xOffset-x);
-          var svgYOffset =  Math.abs(yOffset-y);
-
-          var $svg = generateSVG(0,0,svgXOffset,svgYOffset);
-
-          if(offIndex<0){
-            $svg.css("-webkit-transform",translate3d(x+X_INCR/2-1000,y+Y_INCR/2,0) + "rotateY(180deg)");
-          } else{
-            $svg.css("-webkit-transform",translate3d(x+X_INCR/2,y+Y_INCR/2,0));
-          }
-          self.$el.append($svg);
+          var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
+          var $path = generateSVGPath(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2,5000);
+          var svg = self.$el.find('svg').append($path);
           traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,1]);
         }
       }

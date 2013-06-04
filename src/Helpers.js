@@ -19,12 +19,24 @@ var rotateAxes = function(x, y, z){
 };
 
 
-var generateSVG = function (x1,y1,x2,y2){
-  var xCtrl = Math.floor((x2+x1)*0.50);
-  var yCtrl = Math.floor((y1+y2)*0.35);
+var generateSVGPath = function (x1,y1,x2,y2,center){
+  var xCtrl,
+      yCtrl;
+  xCtrl = Math.floor((x2+x1)*0.50);
+  yCtrl = Math.floor((y1+y2)*0.35);
+
+  center = center || 0;
+
+  var newLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+  newLine.setAttribute("x1",""+(x1+center));
+  newLine.setAttribute("x2",""+(x2+center));
+  newLine.setAttribute("y1",""+y1);
+  newLine.setAttribute("y2",""+y2);
+  newLine.setAttribute("stroke-width","2");
+  newLine.setAttribute("stroke","white");
 
   //console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
-  return $("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"><path d=\"M"+x1+","+y1+" Q"+xCtrl+","+yCtrl+" " +x2+","+y2+"\" fill=\"none\" stroke=\"#888888\" stroke-width=\"4\" /></svg>");
+  return newLine;
 };
 
 var updateTreeDepth = function(hierarchyData){ //TODO FIXME

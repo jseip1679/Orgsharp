@@ -55,7 +55,7 @@ var CameraView = Backbone.View.extend({
     var DURATION = 1;
     var currentRotation;
 
-    //console.log(e.keyCode);
+    console.log(e.keyCode);
 
     switch (e.keyCode){
       case 37: //left
@@ -79,6 +79,12 @@ var CameraView = Backbone.View.extend({
       break;
       case 189: //minus
         this.xyzRot[1] = Math.max(this.xyzRot[1] - ROTATION_DEG,-45);
+      break;
+      case 219: //plus
+        this.dollyView.move(0,-50,0);
+      break;
+      case 221: //minus
+        this.dollyView.move(0,50,0);
       break;
     }
 
