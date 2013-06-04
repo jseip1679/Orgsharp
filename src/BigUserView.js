@@ -11,13 +11,19 @@ var BigUserView = Backbone.View.extend({
                         <input type="tel" value="<%= mobile %>"></input><br>\
                         <input type="email" value="<%= email %>"></input>\
                         <img class="edit-user-icon" src="./img/png/glyphicons_030_pencil.png">\
+                        <img class="delete-user-icon" src="./img/png/glyphicons_197_remove.png">\
                         <img class="add-user-icon" src="./img/png/glyphicons_006_user_add.png">'),
   events: {
-    "mouseover .edit-user-icon" : "hoverEdit",
-    "mouseleave .edit-user-icon" : "unhoverEdit",
-    "mouseover .add-user-icon" : "hoverAdd",
-    "mouseleave .add-user-icon" : "unhoverAdd",
-    "click .add-user-icon": "addChild"
+    "mouseover .edit-user-icon" : "toggleEdit",
+    "mouseleave .edit-user-icon" : "toggleEdit",
+    "mouseover .add-user-icon" : "toggleAdd",
+    "mouseleave .add-user-icon" : "toggleAdd",
+    "mouseleave .delete-user-icon" : "toggleDelete",
+    "mouseover .delete-user-icon" : "toggleDelete",
+
+    "click .add-user-icon": "addChild",
+    "click .delete-user-icon": "deleteUser"
+
   },
 
   initialize: function(){
@@ -31,19 +37,15 @@ var BigUserView = Backbone.View.extend({
     return this;
   },
 
-  hoverEdit: function(){
+  toggleEdit: function(){
     this.$el.find(".edit-user-icon").toggleClass("invert");
   },
 
-  unhoverEdit: function(){
-    this.$el.find(".edit-user-icon").toggleClass("invert");
+  toggleDelete: function(){
+    this.$el.find(".delete-user-icon").toggleClass("invert");
   },
 
-  hoverAdd: function(){
-    this.$el.find(".add-user-icon").toggleClass("invert");
-  },
-
-  unhoverAdd: function(){
+  toggleAdd: function(){
     this.$el.find(".add-user-icon").toggleClass("invert");
   },
 
@@ -53,5 +55,9 @@ var BigUserView = Backbone.View.extend({
 
   addChild: function(){
     this.trigger("addNewChild", this.model.id);
+  },
+
+  deleteUser: function(){
+    this.trigger("deleteUser", this.model.id);
   }
 });

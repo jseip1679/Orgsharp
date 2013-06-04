@@ -55,7 +55,7 @@ var CameraView = Backbone.View.extend({
     var DURATION = 1;
     var currentRotation;
 
-    console.log(e.keyCode);
+    // console.log(e.keyCode);
 
     switch (e.keyCode){
       case 37: //left

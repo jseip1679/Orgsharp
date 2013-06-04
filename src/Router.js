@@ -19,20 +19,53 @@ var Router = Backbone.Router.extend({
       this.bigUserView.render();
     }, this);
 
-
+    /*---             ADD USERS          ----*/
     this.bigUserView.on('addNewChild', function(childId){
-      console.log("just created a new user");
       var newUserId = Math.floor(Math.random()*10000+100);
-      this.hierarchy.set(newUserId, {children:[]});
+      this.hierarchy.set(newUserId, {parent:childId, children:[]});
       var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
       this.hierarchy.set("treeDepth",newTreeDepth);
       this.hierarchy.get(childId).children.push(newUserId);
       this.users.push(new User({id:newUserId}));
+
+      console.log(this.hierarchy.attributes);
+      console.log(this.hierarchy.users);
+
+    },this);
+
+    /*---           DELETE USERS          ----*/
+    this.bigUserView.on('deleteUser', function(TBDelModelID){
+      //get the hierarchy model for the current parent
+      var TBDelModel = this.hierarchy.get(TBDelModelID);
+      var parentID = TBDelModel.parent;
+      var parent =  this.hierarchy.get(parentID);
+
+      console.log("Parent Info", parent);
+
+      //remove the to-be-deleted model's id from the parent's children list.  Add-the to-be deleted child's children to that collection 
+      var parentChildren = _(parent.children).without(TBDelModelID);
+      parent.children = _.union(parentChildren, TBDelModel.children);
+      this.hierarchy.set(parentID, parent);
+
+      //set the parentID for each of TBDel's children
+      _.each(TBDelModel.children, function(childID){
+        this.hierarchy.set(childID, {parent:parentID});
+      },this);
+
+      //remove the tbDelModel from both users and hierarchy
+      this.hierarchy.unset(TBDelModelID);
+      this.users.remove(TBDelModelID);
+
+      //recalculate the depth of the tree
+      // var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
+      // this.hierarchy.set("treeDepth",newTreeDepth);
+
+      console.log("Hierarchy after the operation:",this.hierarchy.attributes);
+
     },this);
 
     $('.org-chart').append(this.cameraView.render().el);
     $('header').append(this.logInView.render().el);
-
     $('.big-user-view-container').append(this.bigUserView.render().el);
 
   },

@@ -88,6 +88,15 @@ header {
   height: 20px;
   right: 2% ;
   bottom: 1%;
+  position: absolute; 
+  display: inline-block;
+}
+
+.big-user-view .delete-user-icon {
+  width: 20px;
+  height: 20px;
+  right: 40px;
+  bottom: 1%;
   position: absolute;
   display: inline-block;
 }

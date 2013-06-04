@@ -16,7 +16,12 @@ var HierarchyView = Backbone.View.extend({
 
     this.listenTo(this.model.attributes.users, "add", function(){
       this.render();
-      },this);
+    },this);
+
+    this.listenTo(this.model.attributes.users, "remove", function(){
+      this.render();
+    },this);
+
 
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
