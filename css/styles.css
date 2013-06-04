@@ -11,6 +11,8 @@ body {
 svg {
   z-index: -1;
   position:fixed;
+  height: 400px;
+  width: 1000px;
   /*width: 10000px;*/
   /*left: -5000px;*/
   /*height:  10000px;*/
