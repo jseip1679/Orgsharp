@@ -13,6 +13,7 @@ var HierarchyView = Backbone.View.extend({
     var hierarchy = this.options.hierarchy.attributes,
         self = this;
 
+    // this.el = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>';
     this.listenTo(this.model.attributes.users, "add", function(){
       this.render();
       },this);
@@ -63,9 +64,8 @@ var HierarchyView = Backbone.View.extend({
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
           var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
-          var $svg = $(generateSVG(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2,5000));
-          $svg.css("-webkit-transform",translate3d(0,0,-1));
-          self.$el.append($svg);
+          var $path = $(generateSVGPath(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2,5000));
+          self.$el.find('svg').append($path);
           traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,1]);
         }
       }

@@ -19,7 +19,7 @@ var rotateAxes = function(x, y, z){
 };
 
 
-var generateSVG = function (x1,y1,x2,y2,center){
+var generateSVGPath = function (x1,y1,x2,y2,center){
   var xCtrl,
       yCtrl;
   xCtrl = Math.floor((x2+x1)*0.50);
@@ -27,7 +27,7 @@ var generateSVG = function (x1,y1,x2,y2,center){
 
   center = center || 0;
   //console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
-  return "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\"><path d=\"M"+(x1+center)+","+y1+" Q"+(xCtrl+center)+","+yCtrl+" " +(x2+center)+","+y2+"\" fill=\"none\" stroke=\"#888888\" stroke-width=\"4\" /></svg>";
+  return "<path d=\"M"+(x1+center)+","+y1+" Q"+(xCtrl+center)+","+yCtrl+" " +(x2+center)+","+y2+"\" fill=\"none\" stroke=\"#888888\" stroke-width=\"4\" />";
 };
 
 var updateTreeDepth = function(hierarchyData){ //TODO FIXME
