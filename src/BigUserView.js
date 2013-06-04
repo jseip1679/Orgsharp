@@ -16,7 +16,8 @@ var BigUserView = Backbone.View.extend({
     "mouseover .edit-user-icon" : "hoverEdit",
     "mouseleave .edit-user-icon" : "unhoverEdit",
     "mouseover .add-user-icon" : "hoverAdd",
-    "mouseleave .add-user-icon" : "unhoverAdd"
+    "mouseleave .add-user-icon" : "unhoverAdd",
+    "click .add-user-icon": "addChild"
   },
 
   initialize: function(){
@@ -48,5 +49,9 @@ var BigUserView = Backbone.View.extend({
 
   selected: function(){
 
+  },
+
+  addChild: function(){
+    this.trigger("addNewChild", this.model.id);
   }
 });

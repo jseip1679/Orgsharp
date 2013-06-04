@@ -19,6 +19,17 @@ var Router = Backbone.Router.extend({
       this.bigUserView.render();
     }, this);
 
+
+    this.bigUserView.on('addNewChild', function(childId){
+      console.log("just created a new user");
+      var newUserId = Math.floor(Math.random()*10000+100);
+      this.hierarchy.set(newUserId, {children:[]});
+      var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
+      this.hierarchy.set("treeDepth",newTreeDepth);
+      this.hierarchy.get(childId).children.push(newUserId);
+      this.users.push(new User({id:newUserId}));
+    },this);
+
     $('.org-chart').append(this.cameraView.render().el);
     $('header').append(this.logInView.render().el);
 

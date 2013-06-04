@@ -9,8 +9,14 @@ var HierarchyView = Backbone.View.extend({
   },
 
   initialize: function(params){
+
     var hierarchy = this.options.hierarchy.attributes,
         self = this;
+
+    this.listenTo(this.model.attributes.users, "add", function(){
+      console.log("Hierarchy just changed in hierarchy-view");
+      this.render();
+      },this);
 
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
@@ -58,7 +64,7 @@ var HierarchyView = Backbone.View.extend({
       if(childIDs) {
         for(var i = 0; i < childIDs.length; i++){
           var xOffset = x + X_INCR*offsetIndex(i)*(treeDepth-curDepth);
-          self.$el.append($(generateSVG(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2)));
+          self.$el.append($(generateSVG(x+X_INCR/2,y+Y_INCR/2,xOffset+X_INCR/2,yOffset+Y_INCR/2,5000)));
           traverseTree(childIDs[i],hierarchy,[xOffset,yOffset,1]);
         }
       }

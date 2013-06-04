@@ -57,10 +57,10 @@ var hierarchyData = {
   treeDepth: 3,
   0:{"root":true, children: [1,3]},
   1:{children:[2,4,5]},
-  2:{},
-  3:{},
-  4:{},
+  2:{children:[]},
+  3:{children:[]},
+  4:{children:[]},
   5:{children:[7]},
-  6:{},
-  7:{}
+  6:{children:[]},
+  7:{children:[]}
 };
