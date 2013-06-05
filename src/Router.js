@@ -67,9 +67,9 @@ var Router = Backbone.Router.extend({
       this.hierarchy.unset(TBDelModelID);
       this.users.remove(TBDelModelID);
 
-      //recalculate the depth of the tree
-      // var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
-      // this.hierarchy.set("treeDepth",newTreeDepth);
+      // recalculate the depth of the tree
+      var newTreeDepth = updateTreeDepth(this.hierarchy);
+      this.hierarchy.set("treeDepth",newTreeDepth);
 
       console.log("Hierarchy after the operation:",this.hierarchy.attributes);
       console.log(this.users);

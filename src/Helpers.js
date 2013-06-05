@@ -45,15 +45,10 @@ var updateTreeDepth = function(hierarchyData){
 
   //refactoring to accept model
   var getMaxDepthofChildren  = function(nodeID,curDepth){
-    debugger;
     var children = hierarchyData.get(nodeID).children;
 
     //get the depth of each child path
     var childDepths = [];
-
-    if(nodeID === 7){
-      debugger;
-    }
 
     curDepth = curDepth || 1;
 
@@ -82,6 +77,6 @@ var updateTreeDepth = function(hierarchyData){
 
   console.log("OVERALL DEPTH IS:" , getMaxDepthofChildren(0,0));
 
-  return 5;
+  return getMaxDepthofChildren(0,0);
 };
 
