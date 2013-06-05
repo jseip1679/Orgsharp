@@ -16,7 +16,7 @@ svg {
 }
 
 span {
-  z-index: 2;
+  z-index: 10;
   font-family: 'Alef', sans-serif;
   font-weight: 200;
   color: white;
@@ -28,7 +28,7 @@ span {
 }
 
 header {
-  z-index: 2;
+  z-index: 10;
   width: 100%
   position:absolute;
   overflow:hidden;

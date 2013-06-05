@@ -22,7 +22,8 @@ var BigUserView = Backbone.View.extend({
     "mouseover .delete-user-icon" : "toggleDelete",
 
     "click .add-user-icon": "addChild",
-    "click .delete-user-icon": "deleteUser"
+    "click .delete-user-icon": "deleteUser",
+    "keydown input": "handleKey"
 
   },
 
@@ -59,5 +60,19 @@ var BigUserView = Backbone.View.extend({
 
   deleteUser: function(){
     this.trigger("deleteUser", this.model.id);
+  },
+
+  handleKey: function(e){
+    if(e.keyCode === 13){
+      $email = this.$el.find('input[type=email]');
+      $mobile = this.$el.find('input[type=tel]');
+      $firstAndLast = this.$el.find('input[type=text]');
+
+      var arry = $firstAndLast.val().split(' ');
+      var first = arry[0];
+      var last = arry[arry.length-1];
+      this.model.set({firstname:first, lastname:last, email:$email.val(), mobile:$mobile.val()});
+      this.$el.find('input').blur();
+    }
   }
 });

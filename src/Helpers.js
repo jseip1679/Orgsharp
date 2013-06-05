@@ -41,8 +41,6 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
 
 var updateTreeDepth = function(hierarchyData){
 
-  console.log(hierarchyData);
-
   //refactoring to accept model
   var getMaxDepthofChildren  = function(nodeID,curDepth){
     var children = hierarchyData.get(nodeID).children;
@@ -56,7 +54,7 @@ var updateTreeDepth = function(hierarchyData){
       for(var i = 0; i < children.length; i++){
         childDepths.push(getMaxDepthofChildren(children[i],curDepth+1));
       }
-      console.log("NodeID:" , nodeID, " Depth: ",curDepth," Child Depths: ", childDepths);
+      // console.log("NodeID:" , nodeID, " Depth: ",curDepth," Child Depths: ", childDepths);
     }
 
     //return the greatest of each child path
@@ -75,7 +73,7 @@ var updateTreeDepth = function(hierarchyData){
 
   };
 
-  console.log("OVERALL DEPTH IS:" , getMaxDepthofChildren(0,0));
+  // console.log("OVERALL DEPTH IS:" , getMaxDepthofChildren(0,0));
 
   return getMaxDepthofChildren(0,0);
 };
