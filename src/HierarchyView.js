@@ -22,7 +22,7 @@ var HierarchyView = Backbone.View.extend({
       this.render();
     },this);
 
-    updateTreeDepth(hierarchy);
+    updateTreeDepth(this.options.hierarchy);
 
 
     _.find(hierarchy, function(v,k){

@@ -42,8 +42,11 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
 var updateTreeDepth = function(hierarchyData){
 
   console.log(hierarchyData);
+
+  //refactoring to accept model
   var getMaxDepthofChildren  = function(nodeID,curDepth){
-    var children = hierarchyData[nodeID].children;
+    debugger;
+    var children = hierarchyData.get(nodeID).children;
 
     //get the depth of each child path
     var childDepths = [];
