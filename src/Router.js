@@ -20,16 +20,24 @@ var Router = Backbone.Router.extend({
     }, this);
 
     /*---             ADD USERS          ----*/
-    this.bigUserView.on('addNewChild', function(childId){
+    this.bigUserView.on('addNewChild', function(parentID){
       var newUserId = Math.floor(Math.random()*10000+100);
-      this.hierarchy.set(newUserId, {parent:childId, children:[]});
-      var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
-      this.hierarchy.set("treeDepth",newTreeDepth);
-      this.hierarchy.get(childId).children.push(newUserId);
+      this.hierarchy.set(newUserId, {parent:parentID, children:[]});
+
+      var parent = this.hierarchy.get(parentID);
+      var parentsChildren = parent.children;
+      parentsChildren.push(newUserId);
+
+      parent["children"] = parentsChildren;
+      this.hierarchy.set(parentID, parent);
+
       this.users.push(new User({id:newUserId}));
 
-      console.log("Hierarchy",this.hierarchy.attributes);
-      console.log("Users", this.users);
+      var newTreeDepth = updateTreeDepth(this.hierarchy.attributes);
+      this.hierarchy.set("treeDepth",newTreeDepth);
+
+      // console.log("Hierarchy",this.hierarchy.attributes);
+      // console.log("Users", this.users);
 
     },this);
 
@@ -52,7 +60,7 @@ var Router = Backbone.Router.extend({
         var currModel = this.hierarchy.get(childID);
         // debugger;
         currModel["parent"] = parentID;
-        this.hierarchy.set(childID, currModel); //TODO FIX THIS  
+        this.hierarchy.set(childID, currModel);
       },this);
 
       //remove the tbDelModel from both users and hierarchy

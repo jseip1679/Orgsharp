@@ -21,7 +21,7 @@ var DollyView = Backbone.View.extend({
   render: function(){
     this.$el.children().detach();
     this.$el.append(this.orgView.render().el);
-    this.$el.append(this.reflectedOrgView.render().el);
+    //this.$el.append(this.reflectedOrgView.render().el);
 
     this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");

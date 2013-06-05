@@ -22,6 +22,8 @@ var HierarchyView = Backbone.View.extend({
       this.render();
     },this);
 
+    updateTreeDepth(hierarchy);
+
 
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){

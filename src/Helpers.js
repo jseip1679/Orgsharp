@@ -39,22 +39,46 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
   return newLine;
 };
 
-var updateTreeDepth = function(hierarchyData){ //TODO FIXME
-  var count = 0;
+var updateTreeDepth = function(hierarchyData){
 
-  var traverseChildren = function(nodeID){
-    if(!hierarchyData[nodeID].children){return;}
-    if(hierarchyData[nodeID].children.length === 0){return;}
-      count++;
-    for(var i = 0; i < hierarchyData[nodeID].children.length; i++){
-      traverseChildren(hierarchyData[nodeID].children[i]);
+  console.log(hierarchyData);
+  var getMaxDepthofChildren  = function(nodeID,curDepth){
+    var children = hierarchyData[nodeID].children;
+
+    //get the depth of each child path
+    var childDepths = [];
+
+    if(nodeID === 7){
+      debugger;
     }
-  };
-  traverseChildren(0);
-  console.log("oldDepth:", hierarchyData.treeDepth);
-  console.log("newDepth:", count);
 
-  hierarchyData.treeDepth = count;
-  return count;
+    curDepth = curDepth || 1;
+
+    if(children && children.length >= 0){
+      for(var i = 0; i < children.length; i++){
+        childDepths.push(getMaxDepthofChildren(children[i],curDepth+1));
+      }
+      console.log("NodeID:" , nodeID, " Depth: ",curDepth," Child Depths: ", childDepths);
+    }
+
+    //return the greatest of each child path
+    var greatestChild = 0;
+    for(var j = 0; j < childDepths.length; j++){
+      if(childDepths[j] > greatestChild){
+        greatestChild = childDepths[j];
+      }
+    }
+
+    if(curDepth > greatestChild){
+      return curDepth;
+    } else {
+      return greatestChild;
+    }
+
+  };
+
+  console.log("OVERALL DEPTH IS:" , getMaxDepthofChildren(0,0));
+
+  return 5;
 };
 
