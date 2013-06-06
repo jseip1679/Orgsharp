@@ -71,7 +71,12 @@ var BigUserView = Backbone.View.extend({
       var arry = $firstAndLast.val().split(' ');
       var first = arry[0];
       var last = arry[arry.length-1];
-      this.model.set({firstname:first, lastname:last, email:$email.val(), mobile:$mobile.val()});
+      this.model.set({
+        firstname:_.escape(first),
+        lastname:_.escape(last),
+        email:_.escape($email.val()),
+        mobile:_.escape($mobile.val())
+      });
       this.$el.find('input').blur();
     }
   }
