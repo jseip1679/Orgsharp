@@ -39,15 +39,15 @@ var BigUserView = Backbone.View.extend({
   },
 
   toggleEdit: function(){
-    this.$el.find(".edit-user-icon").toggleClass("invert");
+    this.$el.find(".edit-user-icon").toggleClass("half-invert");
   },
 
   toggleDelete: function(){
-    this.$el.find(".delete-user-icon").toggleClass("invert");
+    this.$el.find(".delete-user-icon").toggleClass("half-invert");
   },
 
   toggleAdd: function(){
-    this.$el.find(".add-user-icon").toggleClass("invert");
+    this.$el.find(".add-user-icon").toggleClass("half-invert");
   },
 
   selected: function(){
