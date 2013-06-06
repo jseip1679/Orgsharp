@@ -6,7 +6,7 @@ var UserView = Backbone.View.extend({
 
   //using underscore's templating system.
   template: _.template('<div>\
-                          <img src=<%= imgUrl %>></img><br>\
+                          <div class="user-profile-image" style="background: url(<%= imgUrl %>); background-repeat:no-repeat; background-size: 100% 100%"></div><br>\
                           <p class="user-name"><%= firstname %> <%= lastname %></p><br>\
                           <p class="user-phone"><%= mobile %></p><br>\
                           <p class="user-email"><%= email %></p>\

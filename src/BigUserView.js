@@ -6,7 +6,7 @@ var BigUserView = Backbone.View.extend({
   className: "big-user-view",
 
   //using underscore's templating system.
-  template: _.template('<img class="big-user-profile-image" src=<%= imgUrl %>></img><br>\
+  template: _.template('<div class="big-user-profile-image" style="background: url(<%= imgUrl %>); background-repeat:no-repeat; background-size: 100% 100%"></div><br>\
                         <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
                         <input type="tel" value="<%= mobile %>"></input><br>\
                         <input type="email" value="<%= email %>"></input>\

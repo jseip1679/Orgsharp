@@ -220,7 +220,19 @@ data {
   float: left;
   width: 160px;
   height: 160px;
-  padding: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-bottom: 5px;
+
+}
+
+.user-profile-image {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 5px;
 }
 
 .big-user-view input{
