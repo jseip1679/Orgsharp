@@ -7,6 +7,7 @@ var userData = [
     age: "28",
     mobile: "+1 (410) 819 6666",
     title: "Programmer",
+    imgUrl: "http://images.apple.com/pr/bios/images/cook_hero20110204.png"
   },
   {
     id: 1,
@@ -25,25 +26,25 @@ var userData = [
     id: 3,
     firstname:"Ali",
     lastname: "W",
-    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+    imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 4,
     firstname:"Jane",
-    lastname: "Doe",
-    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+    lastname: "Jones",
+    imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 5,
     firstname:"Jane",
-    lastname: "Doe",
-    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+    lastname: "Jones",
+    imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 6,
     firstname:"Jane",
-    lastname: "Doe",
-    imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
+    lastname: "Jones",
+    imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 7,
