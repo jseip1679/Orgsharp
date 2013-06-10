@@ -13,7 +13,6 @@ var HierarchyView = Backbone.View.extend({
     var hierarchy = this.options.hierarchy.attributes,
         self = this;
 
-
     this.listenTo(this.model.attributes.users, "add", function(){
       this.render();
     },this);
@@ -66,7 +65,6 @@ var HierarchyView = Backbone.View.extend({
       var nodeModel = model.get("users").get(nodeId);
       var nodeView = new UserView({model:nodeModel, xyz:xyz}).render().$el;
       curDepth++;
-      //console.log("Placing",nodeModel.get("firstname"),nodeModel.get("lastname"),"(id:"+nodeModel.get("id")+")", "at Coordinates:", xyz, "with depth ", curDepth);
 
       self.$el.append(nodeView);
       var yOffset = y + Y_INCR;
@@ -94,4 +92,5 @@ var HierarchyView = Backbone.View.extend({
   unhover: function(){
 
   }
+  
 });

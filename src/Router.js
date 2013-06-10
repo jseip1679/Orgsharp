@@ -45,8 +45,6 @@ var Router = Backbone.Router.extend({
       var parentID = TBDelModel.parent;
       var parent =  this.hierarchy.get(parentID);
 
-      console.log("Parent Info", parent);
-
       //remove the to-be-deleted model's id from the parent's children list.  Add-the to-be deleted child's children to that collection 
       var parentChildren = _(parent.children).without(TBDelModelID);
       parent.children = _.union(parentChildren, TBDelModel.children);
@@ -55,7 +53,6 @@ var Router = Backbone.Router.extend({
       //set the parentID for each of TBDel's children
       _.each(TBDelModel.children, function(childID){
         var currModel = this.hierarchy.get(childID);
-        // debugger;
         currModel["parent"] = parentID;
         this.hierarchy.set(childID, currModel);
       },this);
@@ -67,9 +64,6 @@ var Router = Backbone.Router.extend({
       // recalculate the depth of the tree
       var newTreeDepth = updateTreeDepth(this.hierarchy);
       this.hierarchy.set("treeDepth",newTreeDepth);
-
-      console.log("Hierarchy after the operation:",this.hierarchy.attributes);
-      console.log(this.users);
 
     },this);
 

@@ -257,18 +257,6 @@ data {
 }
 
 .big-user-view{
-  width: 100%
+  width: 100%;
   position:fixed;
 }
-
-.reflected-hierarchy-view
-{
-   top:100px;
-   width:1200px;
-   height:750px;
-  -webkit-perspective:800;
-  position:absolute;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.65, transparent), color-stop(1.0, rgba(255, 255, 255, 0.5)));
-}
-
-
