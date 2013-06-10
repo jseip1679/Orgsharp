@@ -21,15 +21,5 @@ var LogInView = Backbone.View.extend({
   },
 
   sync: function(){
-    alert("Posting AJAX");
-    $.ajax({
-      type: "POST",
-      contentType: "application/json",
-      dataType: "application/json",
-      url: "http://localhost:3000/user/1679",
-      data: { name: "John", location: "Boston" }
-    }).done(function( msg ) {
-      alert( "Data Saved: " + msg );
-    });
   }
 });

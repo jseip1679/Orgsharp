@@ -1,6 +1,4 @@
 var CameraView = Backbone.View.extend({
-
-  //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
   className: "camera-view",
@@ -55,23 +53,17 @@ var CameraView = Backbone.View.extend({
     var DURATION = 1;
     var currentRotation;
 
-    // console.log(e.keyCode);
-
     switch (e.keyCode){
       case 37: //left
-        //this.xyzRot[1] += ROTATION_DEG;
         this.dollyView.move(-50,0,0);
       break;
       case 39: //right
-        //this.xyzRot[1] -= ROTATION_DEG;
         this.dollyView.move(50,0,0);
       break;
       case 38: //up
-        // this.xyzRot[0] -= ROTATION_DEG;
         this.dollyView.move(0,-50,0);
       break;
       case 40: //down
-        // this.xyzRot[0] += ROTATION_DEG;
         this.dollyView.move(0,50,0);
       break;
       case 219: //plus

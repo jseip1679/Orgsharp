@@ -1,5 +1,4 @@
 var DollyView = Backbone.View.extend({
-  //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
   className: "dolly-view",
@@ -50,16 +49,12 @@ var DollyView = Backbone.View.extend({
   },
 
   centerOnCoords: function(x,y,z){
-    // console.log("Requested to move to",x,y,z," from ", this.xyz);
-
     var centWidth = $(window).width()/2;
     var centHeight = $(window).height()/2;
 
     this.xyz[0] = centWidth-x+this.X_START+180;
     this.xyz[1] = centHeight-y+this.Y_START-90;
     this.xyz[2] = (this.Z_START)/2;
-
-    // console.log("Final calculated position was: ", this.xyz);
 
     this.$el.css("-webkit-transform",translate3d(this.xyz[0],this.xyz[1],this.xyz[2]));
     this.$el.css("-webkit-transition-timing-function","ease-out");

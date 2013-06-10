@@ -35,13 +35,11 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
   newLine.setAttribute("stroke-width","2");
   newLine.setAttribute("stroke","gray");
 
-  //console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
   return newLine;
 };
 
 var updateTreeDepth = function(hierarchyData){
 
-  //refactoring to accept model
   var getMaxDepthofChildren  = function(nodeID,curDepth){
     var children = hierarchyData.get(nodeID).children;
 
@@ -54,7 +52,6 @@ var updateTreeDepth = function(hierarchyData){
       for(var i = 0; i < children.length; i++){
         childDepths.push(getMaxDepthofChildren(children[i],curDepth+1));
       }
-      // console.log("NodeID:" , nodeID, " Depth: ",curDepth," Child Depths: ", childDepths);
     }
 
     //return the greatest of each child path
@@ -70,10 +67,7 @@ var updateTreeDepth = function(hierarchyData){
     } else {
       return greatestChild;
     }
-
   };
-
-  // console.log("OVERALL DEPTH IS:" , getMaxDepthofChildren(0,0));
 
   return getMaxDepthofChildren(0,0);
 };

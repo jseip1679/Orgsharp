@@ -1,11 +1,9 @@
 
 var BigUserView = Backbone.View.extend({
-  //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
   className: "big-user-view",
 
-  //using underscore's templating system.
   template: _.template('<div class="big-user-profile-image" style="background: url(<%= imgUrl %>); background-repeat:no-repeat; background-size: 100% 100%"></div><br>\
                         <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
                         <input type="tel" value="<%= mobile %>"></input><br>\
@@ -28,12 +26,10 @@ var BigUserView = Backbone.View.extend({
   },
 
   initialize: function(){
-    //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
   },
 
   render: function(){
-    //take the model's attributes, inject them into the templating system, and set it as $el's HTML
     this.$el.html(this.template(this.model.attributes));
     return this;
   },

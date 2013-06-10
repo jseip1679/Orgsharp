@@ -1,5 +1,4 @@
 var FlatView = Backbone.View.extend({
-  //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
   className: "flat-view",
@@ -10,13 +9,11 @@ var FlatView = Backbone.View.extend({
   },
 
   initialize: function(params){
-    //TODO attach data listeners
   },
 
   render: function(){
-    //remove all children
     this.$el.children().detach();
-    //Given a collection of users, iterate through each, instantiate a view, and render it
+
     var users = this.model.get("users");
     var x = 0;
     var y = 0;

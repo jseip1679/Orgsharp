@@ -1,10 +1,8 @@
 var UserView = Backbone.View.extend({
-  //tagName defaults to div.  I'm specifying here to be more explicit.
   tagName: 'div',
 
   className: "user-view",
 
-  //using underscore's templating system.
   template: _.template('<div>\
                           <div class="user-profile-image" style="background: url(<%= imgUrl %>); background-repeat:no-repeat; background-size: 100% 100%"></div><br>\
                           <p class="user-name"><%= firstname %> <%= lastname %></p><br>\
