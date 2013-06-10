@@ -93,7 +93,7 @@ header img{
   height: 20px;
   right: 2% ;
   bottom: 1%;
-  position: absolute; 
+  position: absolute;
   display: inline-block;
 }
 
@@ -257,6 +257,5 @@ data {
 }
 
 .big-user-view{
-  width: 100%;
-  position:fixed;
+  height: 100%;
 }
