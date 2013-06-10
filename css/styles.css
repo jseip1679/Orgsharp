@@ -13,6 +13,7 @@ svg {
   width: 10000px;
   height:  10000px;
   left: -5000px;
+  z-index: -1;
 }
 
 span {

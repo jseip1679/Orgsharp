@@ -33,7 +33,7 @@ var generateSVGPath = function (x1,y1,x2,y2,center){
   newLine.setAttribute("y1",""+y1);
   newLine.setAttribute("y2",""+y2);
   newLine.setAttribute("stroke-width","2");
-  newLine.setAttribute("stroke","white");
+  newLine.setAttribute("stroke","gray");
 
   //console.log("Setting XVG at Endpoints: ("+x1+","+y1+"):("+x2+","+y2+") with controls: ("+xCtrl+","+yCtrl+")");
   return newLine;

@@ -43,8 +43,7 @@ var UserView = Backbone.View.extend({
     var y = this.options.xyz[1];
     var z = this.options.xyz[2];
 
-    this.$el.css("border-color","red");
-    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+3));
+    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+2));
     this.$el.css("-webkit-transitionDuration","0.5s");
 
   },
@@ -54,8 +53,7 @@ var UserView = Backbone.View.extend({
     var y = this.options.xyz[1];
     var z = this.options.xyz[2];
 
-    this.$el.css("border-color","#8aaacc");
-    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z+1));
+    this.$el.css("-webkit-transform",translate3d(x+0,y+0,z));
     this.$el.css("-webkit-transitionDuration","0.5s");
   },
 

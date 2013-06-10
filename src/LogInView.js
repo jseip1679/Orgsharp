@@ -8,6 +8,7 @@ var LogInView = Backbone.View.extend({
   template: '<label>email</label><input type="email" value=""></input><label>pass</label><input type="password" value=""></input><button>Log In</button>',
 
   events: {
+    "click button": "sync"
 
   },
 
@@ -17,6 +18,18 @@ var LogInView = Backbone.View.extend({
   render: function(){
     this.$el.html(this.template);
     return this;
-  }
+  },
 
+  sync: function(){
+    alert("Posting AJAX");
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      dataType: "application/json",
+      url: "http://localhost:3000/user/1679",
+      data: { name: "John", location: "Boston" }
+    }).done(function( msg ) {
+      alert( "Data Saved: " + msg );
+    });
+  }
 });
