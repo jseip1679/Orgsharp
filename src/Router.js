@@ -75,7 +75,7 @@ var Router = Backbone.Router.extend({
     },this);
 
     $('.org-chart').append(this.cameraView.render().el);
-    $('header').append(this.logInView.render().el);
+    // $('header').append(this.logInView.render().el);
     $('.big-user-view-container').append(this.bigUserView.render().el);
   },
 
