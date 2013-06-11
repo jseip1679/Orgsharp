@@ -69,6 +69,6 @@ var updateTreeDepth = function(hierarchyData){
     }
   };
 
-  return getMaxDepthofChildren(0,0);
+  return getMaxDepthofChildren(1,0);
 };
 
