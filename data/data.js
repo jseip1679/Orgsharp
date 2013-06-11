@@ -7,7 +7,7 @@ var userData = [
     age: "28",
     mobile: "+1 (410) 819 6666",
     title: "Programmer",
-    email: "user0@orgsharp.com",
+    email: "user1@orgsharp.com",
     imgUrl: "http://images.apple.com/pr/bios/images/cook_hero20110204.png"
   },
   {
@@ -16,26 +16,26 @@ var userData = [
     lastname: "Dog",
     age: "4",
     title: "Dog",
-    email: "user1@orgsharp.com",
+    email: "user2@orgsharp.com",
     imgUrl: "http://2.media.collegehumor.cvcdn.com/61/55/ed68d65090620e2c3b66781a6b375f74-dog-may-actually-be-samuel-l-jackson.jpg"
   },
   {
     id: 3,
-    email: "user1@orgsharp.com",
+    email: "user3@orgsharp.com",
     firstname:"John",
     lastname: "Doe"
   },
   {
     id: 4,
     firstname:"Ali",
-    email: "user3@orgsharp.com",
+    email: "user4@orgsharp.com",
     lastname: "W",
     imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 5,
     firstname:"Jane",
-    email: "user4@orgsharp.com",
+    email: "user5@orgsharp.com",
     lastname: "Jones",
     imgUrl:"./img/female_exec.jpg"
   },
@@ -43,21 +43,21 @@ var userData = [
     id: 6,
     firstname:"Jane",
     lastname: "Jones",
-    email: "user5@orgsharp.com",
+    email: "user6@orgsharp.com",
     imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 7,
     firstname:"Jane",
     lastname: "Jones",
-    email: "user6@orgsharp.com",
+    email: "user7@orgsharp.com",
     imgUrl:"./img/female_exec.jpg"
   },
   {
     id: 8,
     firstname:"Jane",
     lastname: "Doe",
-    email: "user7@orgsharp.com", 
+    email: "user8@orgsharp.com",
     imgUrl:"http://m.c.lnkd.licdn.com/media/p/2/000/199/116/1a3678b.jpg"
   }
 ];
