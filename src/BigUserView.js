@@ -74,6 +74,7 @@ var BigUserView = Backbone.View.extend({
         mobile:_.escape($mobile.val())
       });
       this.$el.find('input').blur();
+      this.model.save();
     }
   }
 });
