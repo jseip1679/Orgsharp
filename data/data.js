@@ -22,8 +22,9 @@ var userData = [
   {
     id: 3,
     email: "user3@orgsharp.com",
-    firstname:"John",
-    lastname: "Doe"
+    firstname:"Sir",
+    lastname: "Richard",
+    imgUrl:"./img/sir_richard.jpg"
   },
   {
     id: 4,

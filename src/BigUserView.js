@@ -55,7 +55,10 @@ var BigUserView = Backbone.View.extend({
   },
 
   deleteUser: function(){
-    this.trigger("deleteUser", this.model.id);
+    var confirmed = confirm("Are you sure you want to delete this user?");
+    if(confirmed){
+      this.trigger("deleteUser", this.model.id);
+    }
   },
 
   handleKey: function(e){

@@ -59,7 +59,14 @@ var Router = Backbone.Router.extend({
 
       //remove the tbDelModel from both users and hierarchy
       this.hierarchy.unset(TBDelModelID);
-      this.users.remove(TBDelModelID);
+
+      //destory the model on the server
+      var targetModel = this.users.get(TBDelModelID);
+      targetModel.destroy({success: function(model, response){
+        console.log("model effectively destroyed");
+      }, error: function(err){
+        console.log("failed to destroy model", err);
+      }});
 
       // recalculate the depth of the tree
       var newTreeDepth = updateTreeDepth(this.hierarchy);
