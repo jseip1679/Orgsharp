@@ -39,7 +39,7 @@
     <!-- Linkedin -->
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
         api_key: dqouvi61ud1o
-        authorize: true
+        // authorize: true
     </script>
 
 </head>
@@ -48,7 +48,7 @@
     <header>
       <span>
         <img src="./img/logo.png">
-        <script type="IN/Login" data-label="action">Hello, <?js= firstName ?>!</script>
+        <script type="IN/Login" data-label="action" data-onAuth="startRouter">Welcome, <?js= firstName ?>!</script>
       </span>
     </header>
 
@@ -58,7 +58,9 @@
     </div>
     <script>
       $(function(){
-        var start = new Router().start();
+        startRouter = function(){
+            var start = new Router().start();
+        };
       })
     </script>
   </body>
