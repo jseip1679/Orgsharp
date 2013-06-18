@@ -19,7 +19,6 @@ var BigUserView = Backbone.View.extend({
     "click .add-user-icon": "addChild",
     "click .delete-user-icon": "deleteUser",
     "keydown input": "handleKey"
-
   },
 
   initialize: function(){

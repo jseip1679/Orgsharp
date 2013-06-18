@@ -18,7 +18,6 @@ var rotateAxes = function(x, y, z){
   return "rotateX(" + x + "deg) " + "rotateY(" + y + "deg) " + "rotateZ(" + z + "deg)";
 };
 
-
 var generateSVGPath = function (x1,y1,x2,y2,center){
   var xCtrl,
       yCtrl;
@@ -43,7 +42,6 @@ var updateTreeDepth = function(hierarchyData){
   var getMaxDepthofChildren  = function(nodeID,curDepth){
     var children = hierarchyData.get(nodeID).children;
 
-    //get the depth of each child path
     var childDepths = [];
 
     curDepth = curDepth || 1;
@@ -71,4 +69,3 @@ var updateTreeDepth = function(hierarchyData){
 
   return getMaxDepthofChildren(1,0);
 };
-
