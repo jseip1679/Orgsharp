@@ -23,7 +23,6 @@ var HierarchyView = Backbone.View.extend({
 
     updateTreeDepth(this.options.hierarchy);
 
-
     _.find(hierarchy, function(v,k){
       if(v.hasOwnProperty("root")){
         self.rootId = k; //set the root id
@@ -92,5 +91,5 @@ var HierarchyView = Backbone.View.extend({
   unhover: function(){
 
   }
-  
+
 });

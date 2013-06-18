@@ -69,7 +69,7 @@ var CameraView = Backbone.View.extend({
       case 219://left bracket
         this.xyzRot[1] = Math.min(this.xyzRot[1] + ROTATION_DEG,45);
       break;
-      case 221://right bracket 
+      case 221://right bracket
         this.xyzRot[1] = Math.max(this.xyzRot[1] - ROTATION_DEG,-45);
       break;
       case 187: //plus

@@ -18,9 +18,6 @@ var AppView = Backbone.View.extend({
     this.$el.append(this.cameraView.render().el);
     this.$el.html(this.template(this.model.attributes));
     return this;
-  },
-
-  selected: function(){
-
   }
+
 });
