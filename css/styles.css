@@ -275,3 +275,10 @@ data {
 .big-user-view{
   height: 100%;
 }
+
+.logout {
+  float:right;
+  padding-right: 2em;
+  font-size: 14px;
+  text-align: right;
+}
