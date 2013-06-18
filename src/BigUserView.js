@@ -8,12 +8,9 @@ var BigUserView = Backbone.View.extend({
                         <input type="text" value="<%= firstname %> <%= lastname %>"></input><br>\
                         <input type="tel" value="<%= mobile %>"></input><br>\
                         <input type="email" value="<%= email %>"></input>\
-                        <img class="edit-user-icon" src="./img/png/glyphicons_030_pencil.png">\
                         <img class="delete-user-icon" src="./img/png/glyphicons_197_remove.png">\
                         <img class="add-user-icon" src="./img/png/glyphicons_006_user_add.png">'),
   events: {
-    "mouseover .edit-user-icon" : "toggleEdit",
-    "mouseleave .edit-user-icon" : "toggleEdit",
     "mouseover .add-user-icon" : "toggleAdd",
     "mouseleave .add-user-icon" : "toggleAdd",
     "mouseleave .delete-user-icon" : "toggleDelete",

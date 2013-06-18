@@ -9,7 +9,6 @@ var LogInView = Backbone.View.extend({
 
   events: {
     "click button": "sync"
-
   },
 
   initialize: function(){

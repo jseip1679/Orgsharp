@@ -8,15 +8,11 @@ var UserView = Backbone.View.extend({
                           <p class="user-name"><%= firstname %> <%= lastname %></p><br>\
                           <p class="user-phone"><%= mobile %></p><br>\
                           <p class="user-email"><%= email %></p>\
-                          <img class="add-user-icon" src="./img/png/glyphicons_006_user_add.png">\
                         </div>'),
   events: {
     "mouseover" : "hover",
     "mouseleave" : "unhover",
-    "click" : "selected",
-    "mouseover .add-user-icon" : "hoverToggle",
-    "mouseleave .add-user-icon" : "hoverToggle"
-
+    "click" : "selected"
   },
 
   initialize: function(){
@@ -60,7 +56,4 @@ var UserView = Backbone.View.extend({
     this.model.trigger("requestFocus",this.model.get("xyz"));
   },
 
-  hoverToggle: function(){
-    this.$el.find(".add-user-icon").toggleClass("half-invert");
-  }
 });
