@@ -54,6 +54,6 @@ var UserView = Backbone.View.extend({
   selected: function(){
     this.model.trigger("selected",this.model);
     this.model.trigger("requestFocus",this.model.get("xyz"));
-  },
+  }
 
 });

@@ -19,13 +19,13 @@ var CameraView = Backbone.View.extend({
     this.listenTo(this.model, "change", this.render);
     this.listenTo(this.model.attributes.users, "requestFocus", this.focusOnCoordinates);
 
-    this.xyzRot = [-5,-15,0]; //set the current rotation state to oz
+    this.xyzRot = [-5,-15,0];
 
     //fancy intro animation
     setTimeout(function(){
       self.xyzRot = [-5,-5,0];
       self.render(3,"ease");
-    },1000);
+    },2000);
   },
 
   render: function(transitionTime,transitionFunc){
