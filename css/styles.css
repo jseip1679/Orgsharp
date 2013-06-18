@@ -255,6 +255,8 @@ data {
 .logout {
   float:right;
   padding-right: 2em;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: lighter;
+  font-style: italic;
   text-align: right;
 }

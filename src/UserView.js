@@ -16,7 +16,6 @@ var UserView = Backbone.View.extend({
   },
 
   initialize: function(){
-    //setting the view to listen to and re-render on any changes to the user model
     this.listenTo(this.model, "change", this.render);
     this.model.set("xyz",this.options.xyz); //set xyz on the model attribute
   },
