@@ -9,6 +9,7 @@ var CameraView = Backbone.View.extend({
   },
 
   initialize: function(){
+
     //bind all window keydown events to this model
     var self = this;
     $('body').on('keydown', function(e){
