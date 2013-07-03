@@ -59,9 +59,9 @@ var BigUserView = Backbone.View.extend({
 
   handleKey: function(e){
     if(e.keyCode === 13){
-      $email = this.$el.find('input[type=email]');
-      $mobile = this.$el.find('input[type=tel]');
-      $firstAndLast = this.$el.find('input[type=text]');
+      var $email = this.$el.find('input[type=email]');
+      var $mobile = this.$el.find('input[type=tel]');
+      var $firstAndLast = this.$el.find('input[type=text]');
 
       var arry = $firstAndLast.val().split(' ');
       var first = arry[0];

@@ -28,6 +28,7 @@ body {
 }
 
 img{
+  box-shadow: 0 0 8px 3px gray;
   border-radius: 1px;
   margin-left: 40%;
   margin-top: 5%;

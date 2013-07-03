@@ -10,7 +10,6 @@ var Router = Backbone.Router.extend({
     this.app = new App({users: this.users, hierarchy: this.hierarchy}); //passed users as a parameter
     this.cameraView = new CameraView({model: this.app, hierarchy: this.hierarchy});
     this.bigUserView = new BigUserView({model: this.users.at(0)}); //passed app and hierarchy Data
-    this.logInView = new LogInView();
 
     this.users.on('selected', function(user){
       this.navigate("users/"+user.id);
