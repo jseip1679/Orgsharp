@@ -43,5 +43,10 @@ describe('Models', function(){
 });
 
 describe('Helpers', function(){
-
+  describe('updateTreeDepth', function(){
+    it('should return an integer', function(){
+      var hierarchy = new Hierarchy(hierarchyData);
+      expect(updateTreeDepth(hierarchy)).to.be.an.integer;
+    });
+  });
 });
