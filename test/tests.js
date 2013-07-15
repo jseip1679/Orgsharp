@@ -48,5 +48,14 @@ describe('Helpers', function(){
       var hierarchy = new Hierarchy(hierarchyData);
       expect(updateTreeDepth(hierarchy)).to.be.an.integer;
     });
+    it('should return five, given the dummy data provided', function(){
+      var hierarchy = new Hierarchy(hierarchyData);
+      expect(updateTreeDepth(hierarchy)).to.eql(5);
+    });
+  });
+  describe('translate3d', function(){
+    it('should return a properly formatted CSS 3D transform', function(){
+      expect(translate3d(1,2,3)).to.match()      
+    });
   });
 });
